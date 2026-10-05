@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Menu page 2: EMI SALE + remaining transaction tiles -->
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pax_menu_grid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_12"
+    android:layout_marginRight="@dimen/dp_12"
+    android:columnCount="3"
+    android:useDefaultMargins="false">
+
+    <LinearLayout android:id="@+id/menu_emi_sale" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_emi" />
+        <TextView style="@style/PaxMenuLabel" android:text="EMI SALE" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_emi_void" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_emi" />
+        <TextView style="@style/PaxMenuLabel" android:text="EMI VOID" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_offline" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_offline" />
+        <TextView style="@style/PaxMenuLabel" android:text="OFFLINE" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_adjust" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_adjust" />
+        <TextView style="@style/PaxMenuLabel" android:text="TIP ADJUST" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_cashwithdraw" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_withdraw" />
+        <TextView style="@style/PaxMenuLabel" android:text="CASH WITHDRAW" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_settle" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_settle" />
+        <TextView style="@style/PaxMenuLabel" android:text="SETTLEMENT" />
+    </LinearLayout>
+
+</GridLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Card number confirmation, drawn as the card itself.
+
+  The operator is being asked "is this the card in your hand?", so the thing on
+  screen is laid out like the thing in their hand: chip top left, number across
+  the middle, expiry top right, scheme mark bottom right. Comparing two objects
+  of the same shape is faster and less error-prone than reading a string out of
+  a sentence.
+
+  The number is masked to whatever the masking parameter says. It used to print
+  in full here - the one screen in the app that showed a complete PAN.
+
+  The sheen is the FrameLayout's FOREGROUND, not a child View. It was a child
+  with layout_height="match_parent" inside a wrap_content FrameLayout, which is
+  measured against the whole space the dialog could take - so an empty View
+  reported the full screen height, the FrameLayout wrapped to it, and the card
+  grew into a full-screen blue panel with the buttons pushed off the bottom. A
+  foreground is painted over the view without taking part in measuring it,
+  which is what was wanted all along.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_sheet_bg"
+    android:orientation="vertical"
+    android:paddingLeft="18dp"
+    android:paddingTop="18dp"
+    android:paddingRight="18dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/cc_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:text="CONFIRM CARD NUMBER"
+        android:textColor="#2D3242"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cc_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="3dp"
+        android:paddingBottom="14dp"
+        android:text="Check this against the card in hand"
+        android:textColor="#8A91A0"
+        android:textSize="12sp" />
+
+    <!-- ============================ the card ============================ -->
+    <!-- Shared with the PIN pad. See view_card_face.xml. -->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/view_card_face" />
+
+    <!-- ========================== the decision ========================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/cc_cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_cancel_red"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="CANCEL"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/cc_confirm"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_confirm_green"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="CONFIRM"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

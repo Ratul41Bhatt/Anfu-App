@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PAX-style main screen: blue SALE amount card on top + paged transaction menu + fixed QR. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.activity.PayActivity">
+
+    <!-- Header logo.
+
+         The app name used to sit under it in @string/app_name. The logo asset
+         already reads "Dutch-Bangla Bank", so the line was a second, smaller
+         copy of the same words - and the name it showed was the build's, not
+         the bank's. Nothing in the code touched tv_header_title, so it is gone
+         rather than hidden. The bottom margin moves onto the logo to keep the
+         spacing the removed line was providing. -->
+    <LinearLayout
+        android:id="@+id/main_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/main_posview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/bank_logo" />
+
+        <!-- Reversal line. One word, directly under the logo, gone unless an
+             unacknowledged 0400 is queued. Everything else on the home screen
+             carries on as normal - amount box, tiles, QR - so this is a notice,
+             not a takeover. Invoice, amount and attempt count live on the Clear
+             page in the admin panel. -->
+        <TextView
+            android:id="@+id/tv_reversal_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:gravity="center"
+            android:text="REVERSAL"
+            android:textColor="#D32F2F"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Blue SALE amount card: tapping it (or the arrow) opens the PAX-style keypad -->
+    <RelativeLayout
+        android:id="@+id/main_amount_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginLeft="@dimen/dp_18"
+        android:layout_marginRight="@dimen/dp_18"
+        android:background="@drawable/bg_sale_amount_card"
+        android:minHeight="110dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SALE"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="26sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:text="TK."
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="50sp" />
+
+                <EditText
+                    android:id="@+id/main_amount_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:hint="0.00"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:minWidth="100dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#B3FFFFFF"
+                    android:textSize="50sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/main_amount_enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Start sale"
+            android:src="@drawable/ic_arrow_forward_white" />
+    </RelativeLayout>
+
+    <!-- Paged transaction menu (6 tiles per page; swipe for more) -->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/menu_pager"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginTop="@dimen/dp_12" />
+
+    <!-- Page indicator dots -->
+    <LinearLayout
+        android:id="@+id/menu_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:orientation="horizontal" />
+
+    <!-- Fixed merchant QR filling the space below the menu -->
+    <LinearLayout
+        android:id="@+id/main_qr_block"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_12">
+
+        <ImageView
+            android:id="@+id/menu_qr_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:contentDescription="Merchant QR" />
+
+        <TextView
+            android:id="@+id/menu_qr_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:layout_marginRight="@dimen/dp_18"
+            android:gravity="center"
+            android:text="MERCHANT NAME: LIMU BEDDING STORE DITF-2026\nMERCHANT ID: 8638197970   QR ID: 01097EFD"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Kept (hidden) so legacy references stay valid -->
+    <View
+        android:id="@+id/rl_auto_test"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+</LinearLayout>

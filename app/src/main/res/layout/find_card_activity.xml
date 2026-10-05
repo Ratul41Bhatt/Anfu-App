@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Present-card screen.
+
+  It used to be three stacked rows of small icon-and-paragraph, which read like
+  a manual: the operator had to find the sentence matching what they were about
+  to do. This shows the three methods as equal tiles using the artwork the
+  project already ships, animated so it is obvious the reader is live and
+  waiting, and hides the ones the terminal is not configured to accept - a
+  merchant with contactless switched off should not be offered it.
+
+  The amount is at the top because that is the number the cardholder checks
+  before handing a card over, and it was not on this screen at all.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_trans_type"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_activity"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ui.activity.FindCardActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/common_transparent_color"
+        app:leftIcon="@drawable/arrows_left"
+        app:leftIconHeight="@dimen/dp_18"
+        app:leftIconWidth="@dimen/dp_18"
+        app:lineVisible="false"
+        app:titleColor="@color/white"
+        app:titleSize="@dimen/sp_16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="@color/common_bg_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Shown only for flows that need a card. SETTLEMENT and VOID hide it. -->
+        <LinearLayout
+            android:id="@+id/card_prompt_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- ===================== what is being paid ===================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F7FB"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp">
+
+                <TextView
+                    android:id="@+id/fc_txn_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.12"
+                    android:text="SALE"
+                    android:textColor="#0A0B0B"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fc_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#100567"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fc_prompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:letterSpacing="0.08"
+                android:text="PRESENT CARD"
+                android:textColor="#2D3242"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <!-- ======================= the three ways =======================
+
+                 The whole terminal, not a slab: body, screen, keypad, and all
+                 three card interfaces on the one device - the contactless
+                 field over the screen, the stripe groove down the right edge,
+                 the chip slot in the bottom edge. Each tile animates a card
+                 into the one it teaches.
+
+                 Draw order is z-order. On the insert tile the card is added
+                 BEFORE the terminal so it passes behind it and disappears into
+                 the slot; on the other two the card is in front, because that
+                 is where a tapped or swiped card actually is.
+            -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp">
+
+                <LinearLayout
+                    android:id="@+id/tile_rf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/art_rf"
+                        android:layout_width="104dp"
+                        android:layout_height="180dp"
+                        android:clipChildren="true">
+
+                        <ImageView
+                            android:id="@+id/rf_term"
+                            android:layout_width="62dp"
+                            android:layout_height="103dp"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginTop="44dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/art_pos" />
+
+                        <ImageView
+                            android:id="@+id/rf_nfc"
+                            android:layout_width="44dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginTop="52dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/art_nfc" />
+
+                        <ImageView
+                            android:id="@+id/rf_card"
+                            android:layout_width="50dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginTop="4dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/art_card" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:letterSpacing="0.06"
+                        android:text="TAP"
+                        android:textColor="#2D3242"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Screen / Top"
+                        android:textStyle="bold"
+                        android:textColor="#8C98A8"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tile_msg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/art_msg"
+                        android:layout_width="104dp"
+                        android:layout_height="180dp"
+                        android:clipChildren="true">
+
+                        <ImageView
+                            android:id="@+id/msg_term"
+                            android:layout_width="62dp"
+                            android:layout_height="103dp"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginTop="44dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/art_pos" />
+
+                        <ImageView
+                            android:id="@+id/msg_card"
+                            android:layout_width="26dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="left|top"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginTop="26dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/art_card" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:letterSpacing="0.06"
+                        android:text="SWIPE"
+                        android:textColor="#2D3242"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Right side"
+                        android:textColor="#8C98A8"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tile_ic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/art_ic"
+                        android:layout_width="104dp"
+                        android:layout_height="180dp"
+                        android:clipChildren="true">
+
+                        <ImageView
+                            android:id="@+id/ic_card"
+                            android:layout_width="50dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginTop="180dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/art_card" />
+
+                        <ImageView
+                            android:id="@+id/ic_term"
+                            android:layout_width="62dp"
+                            android:layout_height="103dp"
+                            android:layout_gravity="center_horizontal|top"
+                            android:layout_marginTop="44dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/art_pos" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:letterSpacing="0.06"
+                        android:text="INSERT"
+                        android:textColor="#2D3242"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Bottom slot"
+                        android:textColor="#8C98A8"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- The status line that the reading-card popup used to cover. -->
+            <TextView
+                android:id="@+id/fc_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="18dp"
+                android:textStyle="bold"
+                android:text="CARD READING STATE.."
+                android:textColor="#0A0A0B"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Shown instead of the card prompts for SETTLEMENT and VOID, which
+             are built from the journal and never read a card. -->
+        <LinearLayout
+            android:id="@+id/no_card_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/no_card_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SETTLEMENT"
+                android:textColor="#100567"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/no_card_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:text="Connecting to host..."
+                android:textColor="#555555"
+                android:textSize="15sp" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp" />
+        </LinearLayout>
+
+        <!-- Dedicated Transaction Processing & Result Page -->
+        <LinearLayout
+            android:id="@+id/txn_result_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <!-- Transaction Header / Amount -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F7FB"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:id="@+id/tv_result_txn_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.10"
+                    android:text="SALE"
+                    android:textColor="#0A0B0B"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_result_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="#100567"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- State Icon: Success Tick or Failed X -->
+            <ImageView
+                android:id="@+id/iv_result_icon"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:contentDescription="@null"
+                android:visibility="gone" />
+
+            <!-- Progress Bar during processing -->
+            <ProgressBar
+                android:id="@+id/pb_result_progress"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:indeterminate="true"
+                android:visibility="visible" />
+
+            <!-- Result Title -->
+            <TextView
+                android:id="@+id/tv_result_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Processing Transaction..."
+                android:textColor="#100567"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Response Error / Approval Message -->
+            <TextView
+                android:id="@+id/tv_result_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Connecting to host, please wait..."
+                android:textColor="#555555"
+                android:textSize="15sp" />
+
+            <!-- Auto-return countdown / note -->
+            <TextView
+                android:id="@+id/tv_result_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:textColor="#8C98A8"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

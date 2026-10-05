@@ -1,0 +1,105 @@
+.gradle
+.idea
+.cxx
+.externalNativeBuild
+build
+captures
+
+._*
+_*
+_*/
+*.iml
+.DS_Store
+local.properties
+
+# 忽略构建产生的文件和目录
+/build/
+/app/build/
+
+# 忽略本地配置文件
+/local.properties
+
+# 忽略系统文件
+*.iml
+.gradle/
+/captures/
+
+# 忽略IDE相关文件和目录
+.idea/
+.gradle/
+*.iml
+*.log
+*.swp
+*.DS_Store
+
+# 忽略缓存和临时文件
+*.cache/
+*.apk
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.tar.bz2
+*.tar.xz
+*.tgz
+*.patch
+
+# 忽略生成的代码和资源文件
+gen/
+bin/
+out/
+build/
+
+# 忽略导出的签名文件
+*.jks
+*.keystore
+
+# 忽略本地文档和配置文件
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+*.pdf
+*.txt
+
+# 忽略临时文件和日志
+*.tmp
+*.log
+
+# 忽略一些IDE和编辑器配置文件
+/.idea/
+/.gradle/
+/.vscode/
+/.settings/
+/.project
+/.classpath
+
+# 忽略操作系统生成的文件
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# 忽略系统文件
+desktop.ini
+
+
+# 忽略本地缓存
+/.gradle/
+
+# 忽略日志与临时捕获目录
+terminal_logs/
+_qr-kiosk-backup*/
+*.img
+sdk_dump.txt
+logs.zip
+szanfu_sdk_service.apk
+szanfu_sdk_service.zip
+*_extracted/
+*extracted/
+

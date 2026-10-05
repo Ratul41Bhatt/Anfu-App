@@ -1,0 +1,83 @@
+// AndroidProject 版本：v13.1
+// 导入配置文件
+apply from : 'configs.gradle'
+
+buildscript {
+    // 导入通用的 Maven 库配置
+    apply from : 'maven.gradle'
+    repositories {
+        // 阿里云云效仓库（Gradle 插件）：https://maven.aliyun.com/mvn/guide
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven {url 'https://developer.huawei.com/repo/'}
+        addCommonMaven(repositories)
+    }
+
+    // Studio 插件推荐：https://github.com/getActivity/StudioPlugins
+    dependencies {
+        // Gradle 插件版本说明：https://developer.android.google.cn/studio/releases/gradle-plugin.html#updating-plugin
+        // noinspection GradleDependency
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        // AOP 配置插件 (io.github.wurensen 兼容版)：https://github.com/wurensen/gradle_plugin_android_aspectjx
+        classpath 'io.github.wurensen:gradle-android-plugin-aspectjx:3.3.2'
+    }
+}
+
+allprojects {
+    repositories {
+        // 友盟远程仓库：https://info.umeng.com/detail?id=443&cateId=1
+        maven { url 'https://repo1.maven.org/maven2' }
+        maven {url 'https://developer.huawei.com/repo/'}
+        addCommonMaven(repositories)
+    }
+
+    tasks.withType(JavaCompile) {
+        // 设置全局编码
+        options.encoding = 'UTF-8'
+    }
+    tasks.withType(Javadoc) {
+        // 设置文档编码
+        options {
+            encoding 'UTF-8'
+            charSet 'UTF-8'
+            links 'http://docs.oracle.com/javase/7/docs/api'
+        }
+    }
+
+    // 将构建文件统一输出到项目根目录下的 build 文件夹
+    setBuildDir(new File(rootDir, "build/${path.replaceAll(':', '/')}"))
+
+    afterEvaluate {
+        if (tasks.findByName("testClasses") == null) {
+            tasks.register("testClasses") {
+                // dummy task to satisfy Android Studio / IntelliJ test run configurations
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+//获取时间戳
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd')
+    return formattedDate
+}
+
+//获取Debug版本的后缀
+def getDebugSuffix() {
+    return "_debug_" + getBranchName() + "_" + getBranchVersion()
+}
+
+//获取分支名称
+def getBranchName() {
+    def cmd = 'git symbolic-ref --short -q HEAD'
+    return cmd.execute().text.trim()
+}
+
+//获取分支版本
+def getBranchVersion() {
+    def cmd = "git rev-parse --short HEAD"
+    return cmd.execute().text.trim()
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The magnetic stripe reader, with the groove the card runs through. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="44dp"
+    android:viewportWidth="100"
+    android:viewportHeight="44">
+    <path
+        android:fillColor="#39414F"
+        android:pathData="M7,0 L93,0 A7,7 0 0 1 100,7 L100,37 A7,7 0 0 1 93,44 L7,44 A7,7 0 0 1 0,37 L0,7 A7,7 0 0 1 7,0 Z" />
+    <path
+        android:fillColor="#0C0E13"
+        android:pathData="M0,8 L100,8 L100,20 L0,20 Z" />
+    <path
+        android:fillColor="#232936"
+        android:pathData="M0,8 L100,8 L100,10 L0,10 Z" />
+    <path
+        android:fillColor="#232936"
+        android:pathData="M12,28 L88,28 A4,4 0 0 1 92,32 L92,32 A4,4 0 0 1 88,36 L12,36 A4,4 0 0 1 8,32 L8,32 A4,4 0 0 1 12,28 Z" />
+</vector>

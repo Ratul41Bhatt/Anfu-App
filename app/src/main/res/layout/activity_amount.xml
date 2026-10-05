@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey1"
+    tools:context=".ui.activity.AmountActivity">
+ <!--   <include
+        layout="@layout/common_second_title_layout"
+        />-->
+    <com.hjq.bar.TitleBar
+        app:titleSize="@dimen/dp_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/cardsale_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:weightSum="5"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <TextView
+                android:id="@+id/am_type"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/cardsale_transa_amount"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center_vertical"/>
+
+            <EditText
+                android:maxLength="14"
+                android:id="@+id/am_amount"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.3"
+                android:background="@drawable/tv_amount_shape"
+                android:text="￥0.00"
+                android:textSize="20sp"
+                android:textColor="@color/SandyBrown"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <com.hjq.demo.ui.view.KeyBoardView
+                android:id="@+id/am_kb_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.hjq.demo.ui.view.KeyBoardView>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.PayActivity">
+    <LinearLayout
+        android:id="@+id/main_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_main_title"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="@dimen/space_5" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_10"
+            android:drawableLeft="@drawable/logo_anfu"
+            android:drawablePadding="@dimen/space_10"
+            android:gravity="center_vertical"
+            android:text="@string/string_anfu_order"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_20" />
+    </LinearLayout>
+    <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@+id/main_top_layout"
+        android:id="@+id/main_grid_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/space_2" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <FrameLayout
+                    android:id="@+id/main_my_termainl_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/main_square_style" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawablePadding="10dp"
+                        android:drawableTop="@drawable/my_terminal_img"
+                        android:text="@string/string_main_my_termainl"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/main_my_trade_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/space_2"
+                    android:layout_weight="1"
+                    android:background="@drawable/main_square_style" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawablePadding="@dimen/space_10"
+                        android:drawableTop="@drawable/my_trade_img"
+                        android:text="@string/string_main_my_trade"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/size_16" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/space_2"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <FrameLayout
+                    android:id="@+id/main_my_payment_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/main_square_style" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableTop="@drawable/my_payment_img"
+                        android:drawablePadding="@dimen/space_10"
+                        android:text="@string/string_main_my_payment"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/size_16" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/main_more_app_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/space_2"
+                    android:layout_weight="1"
+                    android:background="@drawable/main_square_style" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawablePadding="@dimen/space_10"
+                        android:drawableTop="@drawable/more_app_img"
+                        android:text="@string/string_main_more_app"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/size_16" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/main_cashier_tab"
+            android:layout_width="167dp"
+            android:layout_height="185dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/main_circle_bg">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/my_shouyintai_img" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_10"
+                    android:gravity="center"
+                    android:text="@string/string_main_cashier"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/size_16" />
+            </LinearLayout>
+        </FrameLayout>
+    </RelativeLayout>
+</LinearLayout>

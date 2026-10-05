@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A payment card, face on. Used by the tap and insert tiles. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="64dp"
+    android:viewportWidth="100"
+    android:viewportHeight="64">
+    <path
+        android:fillColor="#1B3A6B"
+        android:pathData="M7,0 L93,0 A7,7 0 0 1 100,7 L100,57 A7,7 0 0 1 93,64 L7,64 A7,7 0 0 1 0,57 L0,7 A7,7 0 0 1 7,0 Z" />
+    <path
+        android:fillColor="#22497F"
+        android:pathData="M7,0 L93,0 A7,7 0 0 1 100,7 L100,13 A7,7 0 0 1 93,20 L7,20 A7,7 0 0 1 0,13 L0,7 A7,7 0 0 1 7,0 Z" />
+    <path
+        android:fillColor="#22497F"
+        android:pathData="M0,13 L100,13 L100,20 L0,20 Z" />
+    <path
+        android:fillColor="#E3C46A"
+        android:pathData="M13,28 L27,28 A3,3 0 0 1 30,31 L30,40 A3,3 0 0 1 27,43 L13,43 A3,3 0 0 1 10,40 L10,31 A3,3 0 0 1 13,28 Z" />
+    <path
+        android:fillColor="#B9963F"
+        android:pathData="M10,34 L30,34 L30,35.6 L10,35.6 Z" />
+    <path
+        android:fillColor="#B9963F"
+        android:pathData="M19,28 L20.6,28 L20.6,43 L19,43 Z" />
+    <path
+        android:fillColor="#4B6EA8"
+        android:pathData="M58.5,48 L87.5,48 A2.5,2.5 0 0 1 90,50.5 L90,50.5 A2.5,2.5 0 0 1 87.5,53 L58.5,53 A2.5,2.5 0 0 1 56,50.5 L56,50.5 A2.5,2.5 0 0 1 58.5,48 Z" />
+    <path
+        android:fillColor="#4B6EA8"
+        android:pathData="M12.5,48 L45.5,48 A2.5,2.5 0 0 1 48,50.5 L48,50.5 A2.5,2.5 0 0 1 45.5,53 L12.5,53 A2.5,2.5 0 0 1 10,50.5 L10,50.5 A2.5,2.5 0 0 1 12.5,48 Z" />
+</vector>

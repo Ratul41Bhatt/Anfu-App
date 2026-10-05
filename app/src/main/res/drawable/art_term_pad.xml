@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The contactless landing area on the front of the terminal. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="40dp"
+    android:viewportWidth="100"
+    android:viewportHeight="40">
+    <path
+        android:fillColor="#39414F"
+        android:pathData="M8,0 L92,0 A8,8 0 0 1 100,8 L100,32 A8,8 0 0 1 92,40 L8,40 A8,8 0 0 1 0,32 L0,8 A8,8 0 0 1 8,0 Z" />
+    <path
+        android:fillColor="#232936"
+        android:pathData="M11,5 L89,5 A5,5 0 0 1 94,10 L94,22 A5,5 0 0 1 89,27 L11,27 A5,5 0 0 1 6,22 L6,10 A5,5 0 0 1 11,5 Z" />
+    <path
+        android:fillColor="#59637A"
+        android:pathData="M32,31 L68,31 A2,2 0 0 1 70,33 L70,33 A2,2 0 0 1 68,35 L32,35 A2,2 0 0 1 30,33 L30,33 A2,2 0 0 1 32,31 Z" />
+</vector>

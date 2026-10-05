@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dutch Bangla Bank PLC</string>
+
+    <!-- 通用的 -->
+    <string name="common_loading">SWIPE/INSERT/TAP CARD</string>
+    <string name="swipe_card">Please swipe the swipe card again.</string>
+
+    <string name="common_unknown_error">Unknown error</string>
+
+    <string name="common_confirm">Confirm</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_continue">Continue</string>
+
+
+    <string name="common_year">Year</string>
+    <string name="common_month">Month</string>
+    <string name="common_day">Day</string>
+
+    <string name="common_hour">Hour</string>
+    <string name="common_minute">Minute</string>
+    <string name="common_second">Second</string>
+
+    <string name="common_crash_hint">应用出了点小意外，正在重新启动</string>
+
+    <string name="common_network_error">The current network is unavailable, please check the network settings</string>
+
+    <string name="common_video_error_not_support">该视频不适合在此设备上播放</string>
+    <string name="common_video_error_unknown">无法播放此视频</string>
+    <string name="common_video_error_supplement">错误类型：%d，错误代码：%d</string>
+
+    <string name="common_phone_input_hint">Please enter the account number</string>
+    <string name="common_phone_input_error">The account number is not entered correctly</string>
+
+    <string name="common_password_input_error">Please input a password</string>
+    <string name="common_password_input_unlike">The two passwords entered are inconsistent</string>
+
+    <string name="common_code_input_hint">请输入验证码</string>
+    <string name="common_code_send">发送验证码</string>
+    <string name="common_code_send_hint">验证码已发送，请注意查收</string>
+    <string name="common_code_error_hint">验证码错误，请检查输入</string>
+
+    <string name="common_step_next">下一步</string>
+    <string name="common_step_complete">完成</string>
+    <string name="common_step_commit">提交</string>
+
+    <string name="common_permission_fail_1">Authorization failed, please authorize the restrictions correctly</string>
+    <string name="common_permission_fail_2">Failed to obtain permission, please grant it manually</string>
+    <string name="common_permission_fail_3">Failed to obtain permission, please grant it manually%s</string>
+    <string name="common_permission_fail_4">没有授予后台定位权限，请您选择"始终允许"</string>
+    <string name="common_permission_goto">go to authorization</string>
+
+    <string name="common_permission_call_log">通话记录权限</string>
+    <string name="common_permission_sensors">身体传感器权限</string>
+    <string name="common_permission_activity_recognition">健身运动权限</string>
+
+    <string name="common_permission_install">安装应用权限</string>
+    <string name="common_permission_notification">通知栏权限</string>
+    <string name="common_permission_window">悬浮窗权限</string>
+    <string name="common_permission_setting">系统设置权限</string>
+
+    <string name="common_network_hint">当前没有网络连接，请检查网络设置</string>
+    <string name="common_no_more_data">没有更多数据了</string>
+
+    <string name="common_web_ssl_error_title">当前网站安全证书已过期或不可信\n是否继续浏览</string>
+    <string name="common_web_ssl_error_allow">继续浏览</string>
+    <string name="common_web_ssl_error_reject">返回上一页</string>
+
+    <string name="common_web_location_permission_title">当前网站需要获取您的地理位置</string>
+    <string name="common_web_location_permission_allow">授予</string>
+    <string name="common_web_location_permission_reject">拒绝</string>
+
+    <string name="common_web_call_phone_title">当前号码 %s</string>
+    <string name="common_web_call_phone_allow">拨打</string>
+    <string name="common_web_call_phone_reject">取消</string>
+
+    <!-- 网络请求 -->
+    <string name="http_loading">Loading&#8230;</string>
+
+    <string name="http_unknown_error">请求出错，未知错误</string>
+    <string name="http_token_error">登录失效，请重新登录</string>
+    <string name="http_data_explain_error">数据解析异常，请稍后</string>
+    <string name="http_server_out_time">服务器请求超时，请稍后再试</string>
+    <string name="http_network_error">请求失败，请检查网络设置</string>
+    <string name="http_response_error">服务器响应异常，请稍后再试</string>
+    <string name="http_server_error">服务器连接异常，请稍后再试</string>
+    <string name="http_request_cancel">请求被中断，请重试</string>
+
+    <!-- 状态布局 -->
+    <string name="status_layout_no_data">空空如也</string>
+    <string name="status_layout_error_request">请求出错，请重试</string>
+    <string name="status_layout_error_network">网络错误，请重试</string>
+    <string name="status_layout_retry">重试</string>
+
+    <!-- 地区对话框 -->
+    <string name="address_title">Please select a region</string>
+    <string name="address_hint">Please select</string>
+
+    <!-- 日期对话框 -->
+    <string name="date_title">Please select a date</string>
+
+    <!-- 时间对话框 -->
+    <string name="time_title">Please select a time</string>
+
+    <!-- 升级对话框 -->
+    <string name="update_title">发现新版本</string>
+
+    <string name="update_content">更新内容</string>
+
+    <string name="update_no">下次再说</string>
+    <string name="update_yes">立即更新</string>
+
+    <string name="update_permission_hint">必须先要授予权限才能正常下载更新哦</string>
+
+    <string name="update_status_start">正在下载</string>
+    <string name="update_status_running">下载中 %d%%</string>
+    <string name="update_status_successful">下载完成，点击安装</string>
+    <string name="update_status_failed">下载失败，点击重试</string>
+
+    <string name="update_no_update">当前已是最新版本</string>
+
+    <string name="update_notification_channel_id">update</string>
+    <string name="update_notification_channel_name">升级通知</string>
+
+    <!-- 分享对话框 -->
+    <string name="share_title">分享到&#8230;</string>
+
+    <string name="share_platform_wechat">微信</string>
+    <string name="share_platform_moment">朋友圈</string>
+    <string name="share_platform_qq">QQ</string>
+    <string name="share_platform_qzone">QQ空间</string>
+    <string name="share_platform_link">复制链接</string>
+
+    <string name="share_platform_copy_hint">已复制到剪贴板</string>
+
+    <!-- 支付密码对话框 -->
+    <string name="pay_title">Please enter payment password</string>
+
+    <!-- 选择对话框 -->
+    <string name="select_min_hint">至少要选择 %d 项</string>
+    <string name="select_max_hint">最多只能选择 %d 项</string>
+
+    <!-- 身份校验对话框 -->
+    <string name="safe_title">身份校验</string>
+
+    <!-- 首页 -->
+    <string name="home_exit_hint">再按一次退出</string>
+    <string name="home_nav_index">首页</string>
+    <string name="home_nav_found">发现</string>
+    <string name="home_nav_message">消息</string>
+    <string name="home_nav_me">我的</string>
+
+    <!-- 登录 -->
+    <string name="login_register">注册</string>
+    <string name="login_tip">Welcome to Login Terminal</string>
+    <string name="login_forget">忘记密码？</string>
+    <string name="login_text">Sign in</string>
+
+    <string name="login_other">其他登录方式</string>
+    <string name="login_languages">Language switching</string>
+    <string name="login_en">English</string>
+
+    <!-- 注册 -->
+    <string name="register_title">注册</string>
+    <string name="register_hint">账号仅用于登录和保护账号安全</string>
+    <string name="register_password_hint1">设置6&#8211;18位登录密码</string>
+    <string name="register_password_hint2">请再次输入一次密码</string>
+
+    <!-- 设置 -->
+    <string name="setting_title">Settings</string>
+
+    <string name="setting_language_switchover">语言切换</string>
+    <string name="setting_language_simple">简体中文</string>
+    <string name="setting_language_complex">繁体中文</string>
+    <string name="setting_update">检查更新</string>
+
+    <string name="setting_password">修改密码</string>
+    <string name="setting_phone">修改手机</string>
+
+    <string name="setting_auto">自动登录</string>
+    <string name="setting_cache">清空缓存</string>
+
+    <string name="setting_agreement">隐私协议</string>
+    <string name="setting_about">关于我们</string>
+
+    <string name="setting_exit">退出登录</string>
+
+    <!-- 关于 -->
+    <string name="about_title">Terminal information</string>
+    <string name="about_author"><font color="#85b84f">Android</font>Smart device</string>
+
+    <string name="about_copyright">Copyright © 2018 &#8211; 2023</string>
+
+    <!-- 忘记密码 -->
+    <string name="password_forget_title">忘记密码</string>
+
+    <!-- 重置密码 -->
+    <string name="password_reset_title">设置登录密码</string>
+    <string name="password_reset_phone_hint1">设置6&#8211;18位登录密码</string>
+    <string name="password_reset_phone_hint2">重新输入一次密码</string>
+    <string name="password_reset_input_error">两次密码输入不一致，请重新输入</string>
+    <string name="password_reset_success">修改成功</string>
+
+    <!-- 修改账号 -->
+    <string name="phone_reset_title">设置账号</string>
+    <string name="phone_reset_change_hint">下次登录请使用更换后的新账号登录</string>
+    <string name="phone_reset_commit">立即绑定</string>
+
+    <string name="phone_reset_commit_succeed">绑定成功</string>
+
+    <!-- 个人资料 -->
+    <string name="personal_data_title">个人资料</string>
+    <string name="personal_data_head">头像</string>
+
+    <string name="personal_data_id">用户ID</string>
+    <string name="personal_data_name">昵称</string>
+    <string name="personal_data_name_hint">设置昵称</string>
+
+    <string name="personal_data_address">地区</string>
+    <string name="personal_data_address_hint">请选择</string>
+
+    <string name="personal_data_phone">账号码</string>
+    <string name="personal_data_phone_hint">立即绑定</string>
+
+    <!-- 浏览器 -->
+    <string name="web_title">网页加载中&#8230;</string>
+
+    <!-- 图片选择 -->
+    <string name="image_select_title">图片选择</string>
+    <string name="image_select_all">所有图片</string>
+
+    <string name="image_select_total">共 %d 张</string>
+
+    <string name="image_select_max_hint">本次最多只能选择 %d 张图片</string>
+
+    <string name="image_select_error">无法选中，该图片已经被删除</string>
+
+    <!-- 裁剪图片 -->
+    <string name="image_crop_error_not_support">裁剪失败，当前手机不支持裁剪图片</string>
+
+    <!-- 视频选择 -->
+    <string name="video_select_title">视频选择</string>
+    <string name="video_select_all">所有视频</string>
+
+    <string name="video_select_total">共 %d 个</string>
+
+    <string name="video_select_max_hint">本次最多只能选择 %d 个视频</string>
+
+    <string name="video_select_error">无法选中，该视频已经被删除</string>
+
+    <!-- 拍照和拍摄 -->
+    <string name="camera_launch_fail">无法启动相机</string>
+    <string name="camera_image_error">目标地址错误</string>
+
+
+    <string name="notImplementFunction">暂未是先此功能!</string>
+    <string name="insert_data_wait_str">正在处理数据信息，请稍候！</string>
+    <string name="notif_no_init">刷卡器还未个人化，不能正常使用！</string>
+    <string name="timeout">数据接收超时，请重试！</string>
+    <string name="cardNum_error">卡号信息有误，请重新刷卡！</string>
+    <string name="amount_type_RMB">元</string>
+    <string name="psw_length_error">密码应该由6位数字组成，请检测！</string>
+    <string name="longtime_no_touch">由于长时间不操作，为了保护您的交易密码安全，已清除数据信息，请重新输入！</string>
+    <string name="no_implement_func">暂未实现的功能，请点击  余额查询  执行相应功能！</string>
+    <string name="card_count_beyond">绑定的卡数量已达到上限！</string>
+    <string name="pop_notice">Printer exception</string>
+    <string name="main_nullify_str">注销</string>
+    <string name="main_bluetooth_str">蓝牙</string>
+    <string name="app_ok">确定</string>
+    <string name="app_cancel">取消</string>
+    <string name="app_back">返回</string>
+    <string name="app_next">下一步</string>
+    <!-- top_linear -->
+    <string name="last_str">last</string>
+    <string name="next_str">next</string>
+    <string name="title_str">title</string>
+
+    <!-- MainActivity -->
+    <string name="main_next_text">绑卡查询</string>
+    <string name="main_notif_dubi">激活失败，请打开声音设置，检查是否有特殊音效开启，如果有请先关闭再重新激活！</string>
+    <string name="pos_info_obtain">正在获取终端信息，请稍候！</string>
+    <string name="pos_info_length_error">终端信息信息获取失败！</string>
+    <string name="main_notif_sure">初始化完成，为了保证您能安心使用，运行此软件期间请不要拔出刷卡器，(*^__^*)！</string>
+    <string name="main_notif_pairing">正在配对检测，请稍候！</string>
+    <string name="main_notif_pair_success">刷卡器检测配对成功！</string>
+    <string name="main_notif_pair_fail">刷卡器检测配对失败,请检查刷卡器是否已插好并重试！</string>
+    <string name="main_title_friendly">Kind tips</string>
+    <string name="main_btn_activate">激活</string>
+    <string name="main_notif_need_activate">认证条件不满足，需要激活！</string>
+    <string name="main_notif_activating">正在激活，请稍候！</string>
+    <string name="main_notif_reset_activate">激活失败，请重新激活！</string>
+    <string name="main_btn_network">打开网络</string>
+    <string name="main_notif_no_network">当前网络不可用，请先设置网络！</string>
+    <string name="main_notif_init_caCer">正在初始化CA根证书，请稍候！</string>
+    <string name="main_toast_caCer_success">CA根证书获取成功！</string>
+    <string name="main_notif_init_serverCer">正在初始化服务端证书，请稍候！</string>
+    <string name="main_toast_serverCer_success">服务端证书获取成功！</string>
+    <string name="main_notif_init_clientCer">正在初始化终端证书，请稍候！</string>
+    <string name="main_toast_clientCer_success">终端证书获取成功！</string>
+    <!--
+    <string name="main_btn_check">自检</string>
+	<string name="main_btn_again_check">重新自检</string>
+	<string name="main_notif_no_pos_check">为了保护您的正常使用，请先进行自检！</string>
+	<string name="main_notif_pos_check_timeout">自检操作超时，请重新操作！</string>
+	<string name="main_notif_pos_checking">正在进行POS自检，请稍候！</string>
+	<string name="main_notif_pos_check_success">POS自检通过！</string>
+    -->
+    <string name="main_notif_pos_check_fail">抱歉，终端自检失败，不能进行正常交易！</string>
+    <string name="main_btn_auth">认证</string>
+    <string name="main_notif_auth_safety">正在进行安全性认证，请稍候！</string>
+    <string name="main_notif_no_auth">终端未认证，请先进行认证！</string>
+    <string name="main_notif_auth_info">正在获取认证信息，请稍候！</string>
+    <string name="main_notif_auth_info_success">认证信息获取成功！</string>
+    <string name="main_notif_auth_info_fail">认证信息获取失败,请重新获取！</string>
+    <string name="main_notif_auth_info_timeout">认证信息获取超时,请重新操作！</string>
+    <string name="main_toast_auth_safety_success">终端认证成功！</string>
+    <string name="main_toast_auth_safety_fail">终端认证失败！</string>
+    <string name="main_btn_again_auth_safety">重新认证</string>
+    <string name="main_sure_exit">确定退出应用程序？</string>
+    <string name="main_menu_posinfo_str">终端信息</string>
+    <string name="main_menu_cardCount_str">修改数量</string>
+    <string name="main_initState_device_check">正在检测设备个人化状态，请稍候！</string>
+    <string name="main_init_device_ing">正在对设备进行个人化，请稍候！</string>
+    <string name="main_init_device_success">设备个人化完成！</string>
+    <string name="main_init_device_fail">设备个人化失败，请重试！</string>
+    <string name="main_init_device_download_cer_fail">证书下载失败！</string>
+    <string name="main_init_device_no">设备还未个人化，请先个人化！</string>
+    <string name="main_initState_device_yes">已个人化</string>
+    <string name="main_initState_device_no">未个人化</string>
+    <string name="main_dialog_delete_device_initData">是否确定删除设备个人化数据?</string>
+    <string name="main_delete_device_initData_ing">正在删除个人化数据，请稍候！</string>
+    <string name="main_delete_device_initData_success">个人化数据删除成功！</string>
+    <string name="main_delete_device_initData_fail">个人化数据删除失败，请重试！</string>
+    <string name="main_write_userinfo_success">写入用户信息成功！</string>
+    <string name="main_write_userinfo_fail">写入用户信息失败，请重试！</string>
+
+    <!-- PosInfoShowActivity -->
+    <string name="posInfo_title">终端信息</string>
+    <string name="posInfo_csn">终端CSN号:</string>
+    <string name="posInfo_deceive_id">设备版本号:</string>
+    <string name="posInfo_vender_code">厂家代码:</string>
+    <string name="posInfo_ability">读卡器能力:</string>
+    <string name="posInfo_ability_se">支持缺省SE模块</string>
+    <string name="posInfo_ability_touch_IC">支持接触式IC</string>
+    <string name="posInfo_ability_no_touch_IC">支持非接触式IC</string>
+    <string name="posInfo_ability_upcard">支持磁条卡</string>
+
+    <!-- SlotCardActivity -->
+    <string name="slot_title">刷卡获取卡号</string>
+    <string name="slot_notif_insert">请插入刷卡器</string>
+    <string name="slot_notif_slotCard">请刷卡</string>
+    <string name="slot_cardNum_auth">卡号获取成功，正在进行认证，请稍候！</string>
+    <string name="slot_cardNum_auth_seccess">卡号信息认证成功，可以正常使用！</string>
+    <string name="slot_cardNum_auth_fail">卡号信息认证失败！</string>
+    <string name="slot_cardNum_auth_exception">网络异常！</string>
+
+    <!-- AlertCardCountActivity -->
+    <string name="alert_title">修改绑定上限</string>
+    <string name="alert_card_count">绑定上限:</string>
+    <string name="alert_hint_card_count">请输入绑定数量上限值</string>
+    <string name="alert_notif_post">正在进行数据上传，请稍候！</string>
+    <string name="alert_count_error">数据不合法，请检测！</string>
+    <string name="alert_count_too_big">数量上限为10，请重新输入！</string>
+    <string name="alert_notif_set_success">银行卡绑定数量修改成功！</string>
+    <string name="alert_notif_set_fail">银行卡绑定数量修改失败！</string>
+
+    <!-- finallypay -->
+    <string name="finallypay_title">最终支付</string>
+    <string name="finallypay_card_number_str">卡号:</string>
+    <string name="finallypay_card_type_str">卡类型:</string>
+    <string name="finallypay_bank_str">银行:</string>
+    <string name="finallypay_psw_str">密码:</string>
+    <string name="finallypay_psw_hint_str">请输入银行卡密码(4-12位)</string>
+    <string name="finallypay_card_user_str">持卡人:</string>
+    <string name="finallypay_card_user_hint_str">请输入该持卡人姓名</string>
+    <string name="finallypay_identity_id_str">身份证号码:</string>
+    <string name="finallypay_identity_id_hint_str">请输入该持卡人身份证</string>
+    <string name="finallypay_phone_number_str">账号码:</string>
+    <string name="finallypay_phone_number_hint_str">请输入开卡时填写的账号</string>
+    <string name="finallypay_crad_number_null">卡号信息不能为空，请先刷卡获取卡号</string>
+    <string name="finallypay_trade_time">正在获取服务器时间，请稍候！</string>
+    <string name="finallypay_trade_enc_msg">正在进行交易信息加密处理，请稍候！</string>
+    <string name="finallypay_trading">正在进行交易处理，请稍候！</string>
+    <string name="finallypay_get_data_form_net">正在与服务器通信获取数据，请稍候！</string>
+    <string name="finallypay_trade_dec_result">正在进行交易结果解密处理，请稍候！</string>
+    <string name="finallypay_trade_fail">交易失败，请重试！</string>
+    <string name="finallypay_trade_enc_fail">交易信息加密失败！</string>
+    <string name="finallypay_trade_psw_error">密码输入有误，请重新输入！</string>
+    <string name="finallypay_trade_result_error">交易结果信息有误！</string>
+    <string name="finallypay_fail_get_csn">获取CSN失败！</string>
+    <string name="finallypay_mac_verify_fail">MAC校验错误！</string>
+    <string name="finallypay_type_1">借记卡</string>
+    <string name="finallypay_type_2">准贷记卡</string>
+    <string name="finallypay_type_3">信用卡</string>
+    <string name="finallypay_repay_card_type_error">不能使用信用卡对信用卡进行还款，请使用借记卡或准贷记卡！</string>
+    <string name="finallypay_notif_unknow_card_type">未知的银行卡类型，请换张银行卡！</string>
+    <string name="finallypay_notif_psw_length_error">密码必须由6位数字组成，请重新输入！</string>
+    <string name="finallypay_notif_name_null">姓名不能为空，请输入！</string>
+    <string name="finallypay_notif_identity_id_null">身份证号不能为空，请输入！</string>
+    <string name="finallypay_notif_identity_id_error">身份证号只能为数字或英文字母，请检查！</string>
+    <string name="finallypay_notif_phone_number_null">账号不能为空，请输入！</string>
+    <string name="finallypay_notif_card_number_fail">卡号获取失败，请重新刷卡获取卡号！</string>
+
+    <!-- indent -->
+    <string name="indent_title">交易订单</string>
+    <string name="indent_content_str">订单内容:</string>
+    <string name="indent_card_number_str">银行卡号:</string>
+    <string name="indent_spend_str">交易金额:</string>
+    <string name="indent_factorage_str">手  续  费:</string>
+    <string name="indent_total_spend_str">付款总金额</string>
+    <string name="indent_total_spend_hint_str">0 元</string>
+    <string name="indent_pay_btn_str">刷卡支付订单</string>
+
+    <!-- repayment -->
+    <string name="repay_title">信用卡还款</string>
+    <string name="repay_slot_btn_str">刷卡获取卡号</string>
+    <string name="repay_slot_info_str">请输入还款信息:</string>
+    <string name="repay_card_number_hint_str">请刷卡获取您的信用卡卡号</string>
+    <string name="repay_card_bank_str">发卡银行:</string>
+    <string name="repay_card_bank_hint_str">根据卡号自动匹配</string>
+    <string name="repay_name_str">姓名:</string>
+    <string name="repay_spend_str">还款金额:</string>
+    <string name="repay_spend_hint_str">请输入还款金额</string>
+    <string name="repay_notif_isnot_credit">此卡不是信用卡，请使用信用卡重新刷卡！</string>
+    <string name="repay_notif_card_type_error">未知卡类型，请使用信用卡重新刷卡！</string>
+    <string name="repay_notif_amount_null">还款金额不能为空，请输入！</string>
+    <string name="repay_notif_amount_type_error">无效金额</string>
+
+    <!-- checkbalance -->
+    <string name="checkbalance_title">余额查询</string>
+    <string name="checkbalance_slot_info_str">借记卡信息:</string>
+    <string name="checkbalance_card_number_str">借记卡卡号:</string>
+    <string name="checkbalance_card_number_hint_str">请输入借记卡卡号</string>
+    <string name="checkbalance_card_psw_str">卡号查询密码:</string>
+    <string name="checkbalance_card_psw_hint_str">请输入卡号查询密码</string>
+    <string name="checkbalance_balance_str">余额查询</string>
+    <string name="checkbalance_trade_str">交易查询</string>
+    <string name="checkbalance_toast_trade_money_null">消费金额不能为空，请输入!</string>
+    <string name="checkbalance_toast_trade_money_error">输入金额格式不合法，请检测!</string>
+    <string name="checkbalance_trade_start_time_str">交易起始时间:</string>
+    <string name="checkbalance_trade_end_time_str">交易结束时间:</string>
+    <string name="checkbalance_notif_get_cardNum">请先获取卡号！</string>
+    <string name="checkbalance_notif_cardNum_length_error">卡号长度有误，请重新获取卡号！</string>
+    <string name="checkbalance_notif_tradeMsg_null">部分交易信息丢失，请重新进行交易处理！</string>
+    <string name="checkbalance_notif_waiting">等待操作...</string>
+    <string name="checkbalance_notif_icorup">请刷卡或者插入IC卡...</string>
+    <string name="checkbalance_notif_ic">请插入IC卡...</string>
+    <string name="checkbalance_notif_ic_ing">正在读取IC卡数据，请稍候...</string>
+    <string name="checkbalance_notif_ic_error">IC卡数据读取错误，请重试...</string>
+    <string name="checkbalance_notif_up">请刷磁条卡...</string>
+    <string name="checkbalance_notif_up_ing">正在读取磁条卡数据，请稍候...</string>
+    <string name="checkbalance_notif_up_error">磁条卡数据读取错误，请重试...</string>
+    <string name="checkbalance_notif_up2_error">二磁道信息读取失败!</string>
+    <string name="checkbalance_notif_up2_success">二磁道信息读取成功，长度为: %1$d</string>
+    <string name="checkbalance_notif_up3_error">三磁道信息读取失败!</string>
+    <string name="checkbalance_notif_up3_success">三磁道信息读取成功，长度为: %1$d</string>
+    <string name="checkbalance_notif_receive_error">数据接收错误，请重试...</string>
+    <string name="checkbalance_notif_receive_timeout">数据接收超时，请重试...</string>
+    <string name="checkbalance_notif_receive_apdu_error">指令数据接收错误，请重试...</string>
+    <string name="checkbalance_notif_operate_cancle_ing">正在取消刷卡等待操作...</string>
+    <string name="checkbalance_notif_operate_cancle_success">刷卡等待操作已取消</string>
+    <string name="checkbalance_notif_operate_cancle_fail">刷卡等待操作取消失败...</string>
+    <string name="checkbalance_notif_device_refuse">终端拒绝交易</string>
+    <string name="checkbalance_notif_getPin_ing">正在加密PinBlock</string>
+    <string name="checkbalance_notif_getPin_success">PinBlock加密成功</string>
+    <string name="checkbalance_notif_getPin_fail">PinBlock加密失败</string>
+    <string name="checkbalance_notif_pboc_two_ing">正在进行二次授权操作，请稍候！</string>
+    <string name="checkbalance_notif_pboc_two_success">二次授权操作成功！</string>
+    <string name="checkbalance_notif_pboc_two_fail">二次授权操作失败，请重试！</string>
+    <string name="checkbalance_notif_pboc_end">PBOC流程结束！</string>
+    <string name="checkbalance_sup_code_str">商户代码：</string>
+    <string name="checkbalance_sup_code_hint_str">请输入商户代码</string>
+    <string name="checkbalance_sup_name_str">商户名称：</string>
+    <string name="checkbalance_sup_name_hint_str">请输入商户名称</string>
+    <string name="checkbalance_ter_code_str">终端代码：</string>
+    <string name="checkbalance_ter_code_hint_str">请输入终端代码</string>
+    <string name="checkbalance_indent_num_str">Order number：</string>
+    <string name="checkbalance_indent_num_hint_str">87654321</string>
+    <string name="checkbalance_trade_money_str">金额：</string>
+    <string name="checkbalance_trade_money_hint_str">请输入金额</string>
+    <string name="checkbalance_trade_money_type_str">交易币种：</string>
+    <string name="checkbalance_trade_money_type_hint_str">请输入交易币种</string>
+    <string name="checkbalance_sup_country_str">商户国家代码：</string>
+    <string name="checkbalance_sup_country_hint_str">请输入商户国家代码</string>
+    <string name="finallypay_trade_ing_msg">正在与设备进行交互，请稍候！</string>
+    <string name="checkbalance_toast_senddata">发送指令，指令ID：%1$s</string>
+    <string name="checkbalance_toast_senddata_success">发送指令成功，指令ID：%1$s</string>
+    <string name="checkbalance_toast_senddata_fail">发送指令失败，指令ID：%1$s</string>
+    <string name="checkbalance_toast_senddata_cancle">发送取消指令，指令ID：%1$s</string>
+    <string name="checkbalance_toast_senddata_success_cancle">发送取消指令成功，指令ID：%1$s</string>
+    <string name="checkbalance_toast_senddata_fail_cancle">发送取消指令失败，指令ID：%1$s</string>
+    <string name="checkbalance_toast_sign_success">Sign in successfully</string>
+    <string name="checkbalance_toast_sign_fail">Sign in failed</string>
+    <string name="checkbalance_toast_loadmainkey_success">Update master key successfully</string>
+    <string name="checkbalance_toast_loadmainkey_fail">Failed to update the master key</string>
+    <string name="checkbalance_toast_loadworkkey_success">导入工作密钥成功</string>
+    <string name="checkbalance_toast_loadworkkey_fail">导入工作密钥失败</string>
+
+    <!-- inputPsw -->
+    <string name="inputPsw_title">输入密码</string>
+    <string name="inputPsw_psw_return_error">请输入正确密码并确认返回！</string>
+    <string name="inputPsw_psw_length_error">密码长度不足4位，请继续输入！</string>
+    <string name="inputPsw_psw_length_beyond">密码只能由4-12位数字组成！</string>
+
+    <!-- CardListShowActivity -->
+    <string name="cardlist_title">银行卡信息</string>
+    <string name="cardlist_null_str">未检测到相应的银行卡绑定信息，点击重新查询！</string>
+    <string name="cardlist_next_text_part">解绑前5张卡</string>
+    <string name="cardlist_next_text_all">解绑前5张卡</string>
+    <string name="cardlist_notif_cant_release">未检测到相应的银行卡绑定信息，无法进行解绑操作！</string>
+
+    <!-- DeviceManagerActivity -->
+    <string name="blue_scan">搜索</string>
+    <string name="blue_stop_scan">停止</string>
+    <string name="toast_pro_connecting">正在连接，请稍候！</string>
+    <string name="toast_connect_success">连接成功！</string>
+    <string name="toast_connect_fail">连接失败！</string>
+    <string name="toast_no_connected">未连接设备！</string>
+    <string name="toast_device_disconnect">已断开连接！</string>
+    <string name="deviceinfo_list_text">设备列表</string>
+    <string name="deviceinf_get_deviceinfo">正在获取设备信息，请稍候！</string>
+    <string name="device_get_deviceinfo_fail">获取设备信息失败！</string>
+    <string name="device_not_select">没有选择设备！</string>
+
+    <!-- DeviceInfoActivity -->
+    <string name="deviceinfo_name_text">设备名称</string>
+    <string name="deviceinfo_serial_text">序列号</string>
+    <string name="deviceinfo_softversion_text">软件版本号</string>
+    <string name="deviceinfo_hardversion_text">硬件版本号</string>
+    <string name="deviceinfo_initState_text">个人化状态</string>
+    <string name="checkbalance_time">时间:</string>
+    <string name="checkbalance_func_tag_tradeset">交易功能设置</string>
+    <string name="checkbalance_trade_func_tag">功能选择</string>
+    <string name="checkbalance_func_tag_onlineset">联机设置</string>
+    <string name="online_success_str">联机成功</string>
+    <string name="online_fail_str">联机失败</string>
+    <string name="checkbalance_trade_tag_CASE">CASE</string>
+    <string name="checkbalance_trade_tag_ARC">ARC</string>
+    <string name="checkbalance_trade_tag_IAD">IAD</string>
+    <string name="checkbalance_trade_CASE_content_str">CASE内容</string>
+    <string name="checkbalance_func_tag_TAC_set">终端应用设置</string>
+    <string name="checkbalance_func_tag_TAC_set_success">终端应用设置成功！</string>
+    <string name="checkbalance_func_tag_TAC_set_fail">终端应用设置失败，请重试！</string>
+    <string name="checkbalance_trade_TAC_set_default_str">TAC-缺省(DF11)</string>
+    <string name="checkbalance_trade_TAC_set_online_str">TAC-联机(DF12)</string>
+    <string name="checkbalance_trade_TAC_set_refuse_str">TAC-拒绝(DF13)</string>
+    <string name="checkbalance_spendinfo_AID_str">AID(9F06):</string>
+    <string name="checkbalance_spendinfo_appVersion_str">应用版本(9F09):</string>
+    <string name="checkbalance_func_tag_spendInfo_set">终端特性设置</string>
+    <string name="checkbalance_func_tag_spendInfo_set_success">终端特性设置成功！</string>
+    <string name="checkbalance_func_tag_spendInfo_set_fail">终端特性设置失败，请重试！</string>
+    <string name="checkbalance_spendinfo_terCounCode_str">终端国家代码(9F1A):</string>
+    <string name="checkbalance_spendinfo_currencyCode_str">交易货币代码(5F2A):</string>
+    <string name="checkbalance_spendinfo_IFD_str">IFD序列号(9F1E):</string>
+    <string name="checkbalance_func_tag_spendInfo_show_str">交易信息</string>
+    <string name="checkbalance_toast_read_reverInfo">读取冲正信息</string>
+    <string name="checkbalance_toast_read_reverInfo_success">读取冲正信息成功!</string>
+    <string name="checkbalance_toast_read_reverInfo_fail">读取冲正信息失败，请重试!</string>
+    <string name="checkbalance_toast_clear_reverInfo">清除冲正信息</string>
+    <string name="checkbalance_toast_clear_reverInfo_success">清除冲正信息成功!</string>
+    <string name="checkbalance_toast_clear_reverInfo_fail">清除冲正信息失败，请重试!</string>
+    <string name="checkbalance_get_ic_cardnum_success">获取IC卡卡号成功!</string>
+    <string name="checkbalance_get_ic_cardnum_fail">获取IC卡卡号失败，请重试!</string>
+    <string name="title_activity_sdk">SDK调用演示</string>
+    <string name="title_activity_loadmainkey">LoadMainKeyActivity</string>
+    <string name="menu_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="none_paired">当前无已配对蓝牙设备</string>
+    <string name="none_found">未找到设备</string>
+    <string name="title_paired_devices">已配对设备</string>
+    <string name="title_other_devices">未配对设备</string>
+    <string name="button_scan">添加设备</string>
+    <string name="title_activity_menu">银联mPOS</string>
+    <string name="title_activity_show">ShowActivity</string>
+    <string name="app_title">银联mPOS</string>
+    <string name="app_version">V1.0.0</string>
+    <string name="descript">description</string>
+    <string name="menu_logon">签到</string>
+    <string name="menu_balance">查询余额</string>
+    <string name="menu_cardsale">卡片消费</string>
+    <string name="menu_quick">小额免密消费</string>
+    <string name="menu_walletsale">钱包消费</string>
+    <string name="menu_void">消费撤销</string>
+    <string name="menu_query">交易查询</string>
+    <string name="menu_settle">结算</string>
+    <string name="menu_set">设备管理</string>
+    <string name="select_title">设备选择</string>
+    <string name="cardsale_title">Card consumption</string>
+    <string name="cardsale_transa_amount">Please enter the consumption amount:</string>
+    <string name="walletsale_title">钱包消费</string>
+    <string name="revoke_title">撤销</string>
+    <string name="revoke_cancel_title">扫码消费撤销</string>
+    <string name="sale_amout">金    额：</string>
+    <string name="sale_card">卡    号：</string>
+    <string name="sale_confirm">确                  认</string>
+    <string name="pos_info">"1.通过蓝牙连接mPOS终端设备\n2.刷卡或插卡时保持平稳、匀速"</string>
+    <string name="stop_scan">停止扫描</string>
+    <string name="current_device">当前设备</string>
+    <string name="startscan">添加设备</string>
+    <string name="disconnect">断开连接</string>
+    <string name="title_result">Trading Results</string>
+    <string name="open_device">打开设备</string>
+    <string name="close_device">断开连接</string>
+    <string name="vouncher_num">凭证号:  </string>
+    <string name="signed_name">"持卡人签名："</string>
+    <string name="confirm_info">"本人确认以上交易，同意将其计入本账户！"</string>
+    <string name="signed_confirm">"确认"</string>
+    <string name="signed_upload">"上传"</string>
+    <string name="signed_clear">"重签"</string>
+    <string name="signed_data">"交易明细"</string>
+    <string name="data1btn">"交易明细"</string>
+    <string name="databtn">"交易记录"</string>
+    <string name="print_head_up">"中国银联签购单"</string>
+    <string name="print_head_up_settlement_sheet">"中国银联结算单"</string>
+    <string name="print_head_up_Summary">"中国银联明细单"</string>
+
+    <string name="dialog_update_title">更新</string>
+    <string name="dialog_update_msg">发现新版本，版本号：</string>
+    <string name="dialog_update_msg2">，是否立即更新</string>
+    <string name="dialog_update_btnupdate">更新</string>
+    <string name="dialog_update_btnnext">下次再说</string>
+    <string name="dialog_downloading_msg">正在下载更新....</string>
+    <string name="dialog_alert_title">警告</string>
+    <string name="dialog_downfailed_btndown">重新下载</string>
+    <string name="dialog_downfailed_btnnext">以后再说</string>
+    <string name="dialog_error_title">错误</string>
+    <string name="dialog_downfailed_msg">下载更新失败，是否重试？</string>
+
+    <string name="string_login_btn">登　　录</string>
+    <string name="string_login_account_hine">账号</string>
+    <string name="string_login_pwd_hine">密码</string>
+    <string name="string_login_copyright">Copyright © 2017 shenzhouanfu</string>
+    <string name="string_main_my_termainl">My terminal</string>
+    <string name="string_main_settings_termainl">终端参数设置</string>
+    <string name="string_main_my_trade">My Deal</string>
+    <string name="string_main_my_payment">QR Code Payments </string>
+    <string name="string_main_shouyintai">收银台</string>
+    <string name="string_main_more_app">More applications</string>
+    <string name="string_main_cashier">Transaction</string>
+    <string name="string_sign_in">The device is being checked in</string>
+    <string name="string_ip_settings">IP设置</string>
+    <string name="string_the_supervisor_password">主管改密</string>
+    <string name="string_sign_out">签退</string>
+    <string name="string_account_close">结算</string>
+    <string name="string_check_update">检测更新</string>
+    <string name="string_check_settings">维护管理</string>
+    <string name="string_union_scan">银联扫码</string>
+    <string name="string_ali_scan">支付宝</string>
+    <string name="string_wchat_scan">微信</string>
+    <string name="string_cloud_quick_pass">小额免密消费</string>
+    <string name="string_scan">扫一扫</string>
+    <string name="string_cancel_scan">扫码撤销</string>
+    <string name="string_title_scan">扫码消费</string>
+    <string name="string_trade_record">交易记录</string>
+    <string name="string_trade_details">交易明细</string>
+    <string name="string_balance_inquire">余额查询</string>
+    <string name="string_purchase_cancel">消费撤销</string>
+    <string name="string_app_name">国银APP</string>
+    <string name="string_net_error">请打开网络连接</string>
+    <string name="string_anfu_order">Sale</string>
+    <string name="string_anfu_all_print">全部打印</string>
+    <string name="string_login_error">账号或密码错误</string>
+    <string name="string_login_error_user">账号错误</string>
+    <string name="string_shuaka_tip">请插卡、刷卡或挥卡</string>
+    <string name="string_quick">请挥卡</string>
+    <string name="str3">bmZ1</string>
+    <string name="toast">将条码或二维码放入框内，即可扫描</string>
+    <string name="toggle_on">轻点这里切换灯光</string>
+    <string name="afde_initialization_state">01</string>
+    <string name="tampercode">00000000</string>
+    <string name="DVErr">该设备存在故障,请联系厂家</string>
+    <string name="signed_sprint">"重打印"</string>
+    <string name="terminal_info">终端信息</string>
+    <string name="terminal_settings">终端参数设置</string>
+    <string name="preservation">保存</string>
+
+    <string name="governor_pwd">请输入主管密码</string>
+
+    <string name="anfu_acquiring">Sale</string>
+    <string name="anfu_test_title">BillingSummary</string>
+
+    <string name="string_update_terminal_version">当前终端版本：V%1$s</string>
+    <string name="string_update_sofeware_version">当前软件版本：V%1$s</string>
+    <string name="string_update_app_version">当前应用版本：V%1$s</string>
+    <string name="string_update_service_version">当前服务版本：V%1$s</string>
+    <string name="string_update_version_battery_tip">当前电量：%1$s，因电量不足%2$s，请连接电源或充满电后，选择升级！</string>
+
+    <string name="string_unlock">解锁</string>
+    <string name="string_operator">01</string>
+    <string name="string_operator_pwd">0000</string>
+    <string name="string_administrators">00</string>
+    <string name="string_administrators_pwd">123456</string>
+    <string name="add_possmain">/data/poss-main.dat</string>
+    <!--输入金额控件-->
+    <string name="amount_backspace">Backspace</string>
+    <string name="amount_clear">Clear</string>
+    <string name="amount_confirm">Confirm</string>
+
+    <string name="trans_select_card_type">Select card reading type</string>
+    <string name="trans_select_card_msr">Magnetic Card</string>
+    <string name="trans_select_card_ic">IC</string>
+    <string name="trans_select_card_rf">RF</string>
+
+    <string name="trans_success">Confirm Card Number</string>
+    <string name="trans_fail">Failed Card reading</string>
+
+    <string name="not_support">Device does not support scanning feature.</string>
+
+
+    <!--    =================================         -->
+    <string name="open_emv_card_search_results">Open EMV card search results:</string>
+    <string name="disable_emv_card_search">Disable EMV card search</string>
+    <string name="closing_the_emv_card_search_result">Closing the EMV card search result:</string>
+    <string name="start_looking_for_a_card">Start looking for a card...</string>
+    <string name="the_card_type_is_searched_successfully">The Card Type is searched successfully:</string>
+    <string name="succeed">succeed</string>
+    <string name="start_contact_search_card">Start contact search card</string>
+    <string name="searching_time_out">Searching time out</string>
+    <string name="card_search_failed_ret">Card search failed, Please try again</string>
+    <string name="please_wait_a_moment_for_transaction_processing">Trading in progress, please wait... </string>
+    <string name="start_a_search_rf_card">Start a search RF card </string>
+    <string name="finish">finish </string>
+    <string name="start_trans">Starting transaction, please wait... </string>
+
+
+    <string name="print_merchant_name">MERCHANT NAME:</string>
+    <string name="print_terminal_no">TERMINAL NO:</string>
+    <string name="print_operator_no">OPERATOR NO:</string>
+    <string name="print_card_no">CARD NO:</string>
+    <string name="print_txn_type">TXN. TYPE:</string>
+    <string name="print_txn_type_info">SALE</string>
+    <string name="print_exp">EXP. DATE:</string>
+    <string name="print_date_time">EXP DATE:</string>
+    <string name="print_ref_no">REF NO:</string>
+    <string name="print_amount">AMOUNT TK:</string>
+    <string name="print_method">METHOD:</string>
+    <string name="print_appr_code">APPR. CODE:</string>
+    <string name="print_method_swipe">SWIPE CARD</string>
+    <string name="print_method_insert">INSERT CARD</string>
+    <string name="print_method_tap">TAP CARD</string>
+    <string name="print_method_manual">MANUAL</string>
+    <string name="sign">CARDHOLDER SIGNATURE：</string>
+    <string name="sing_tip">I AGREE TO PAY BY CARD FOR THE ABOVE TOTAL AMOUNT ISSUER AGREEMENT</string>
+    <string name="trans_canceled">transaction canceled</string>
+
+    <string name="print_merchant_id">Merchant Id #:&#160;</string>
+    <string name="print_term">Term #:&#160;</string>
+    <string name="print_store_id">Store Id #:&#160;</string>
+    <string name="print_ref">Ref #:&#160;</string>
+    <string name="print_method1">Method:&#160;</string>
+    <string name="print_total">Total:</string>
+    <string name="print_total_sign">TK&#160;</string>
+    <string name="print_inv">Inv #:</string>
+    <string name="print_appr_code1">Appr.Code:</string>
+    <string name="print_transaction_id">Transaction Id #:&#160;</string>
+    <string name="print_apprvd">Apprvd:&#160;</string>
+    <string name="print_batch">Batch #:&#160;</string>
+    <string name="print_sign_tip">I agree to pay above total amount accroding to card issuer agreement(Merchant agreement if credit voucher)</string>
+    <string name="print_merchant_copy">Merchant Copy</string>
+    <string name="print_thank_you">Thank You</string>
+
+
+    <string name="print_state">Transaction successful, receipt printing.</string>
+    <string name="trans_waiting">Sending, Please wait...</string>
+
+    <string name="scan_code_result">Scan code successfully</string>
+    <string name="scan_code_err">Failed to parse the QR code</string>
+    <string name="trans_order">Transaction list</string>
+
+    <string name="qrcode_tip">Align QR Code within frame to scan.</string>
+    <string name="qrcode_dark_tip">The environment is too dark,Automatically turn on the fill light</string>
+
+    <string name="scan_showresult">Scan results will show on screen</string>
+    <string name="scan_tip">Place the code within the frame</string>
+    <string name="title">Scan</string>
+    <string name="code_format">Code Format</string>
+    <string name="result_type">Result Type</string>
+    <string name="result_content">Result</string>
+    <string name="copy">Copy</string>
+    <string name="copy_toast">Content has been copied</string>
+    <string name="add_calendar">Add to calendar</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="send_email">Send Email</string>
+    <string name="nivigation">Nivigation</string>
+    <string name="call">Call</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="connect_network">Connet to network</string>
+    <string name="open_browser">Open in browser</string>
+    <string name="barcode_content">Barcode Content:</string>
+    <string name="barcode_width">Barcode width:</string>
+    <string name="width_value">700</string>
+    <string name="barcode_height">Barcode height:</string>
+    <string name="height_value">700</string>
+    <string name="barcode_type">Type:</string>
+    <string name="barcode_margin">Margin:</string>
+    <string name="barcode_color">Color:</string>
+    <string name="generate_barcode">Generate Barcode</string>
+    <string name="save_barcode">Save Barcode</string>
+    <string name="barcode_backgroundcolor">Background:</string>
+    <string name="mwc_title">HMS Core Scan Kit Demo</string>
+    <string name="mwc_subject">About Scan Kit</string>
+    <string name="mwc_detail">An in-app scanner for 1D and 2D barcodes connects your app to real-world scenarios and helps you build powerful code scanning capabilities with a minimum of 5 lines of code.</string>
+    <string name="default_view_decoe">Default View Mode</string>
+    <string name="customized_view_decode">Customized View Mode</string>
+    <string name="bitmap_api_decode">Bitmap Mode</string>
+    <string name="multiProcessor_api_syn_decode">MultiProcessor API Synchronous Mode</string>
+    <string name="multiProcessor_api_asyn_decode">MultiProcessor API Asynchronous Mode</string>
+    <string name="generate_QR_code">Generate QR Code</string>
+    <string name="scan_qr_code">Scan QR code</string>
+    <string name="signature_cannot_be_empty">Signature cannot be empty</string>
+    <string name="signature_too_simple">The signature is too simple, please sign again</string>
+    <string name="signature_too_complex">The signature is too complex, please sign again</string>
+    <string name="signature_in_area">Please handwrite your signature in the signature area</string>
+    <string name="signature_ok">Ok</string>
+    <string name="signature_resign">Resign</string>
+    <string name="service_acquisition_failed">CardService acquisition failed！</string>
+    <string name="service_bind_failed">Binding SDK service exception, please check the service status!</string>
+    <string name="low_battery_power">Low battery level, please charge</string>
+    <string name="print_out_of_paper">Printing out of paper, please add</string>
+    <string name="print_over_temperature">The printer temperature is too high, please try again later</string>
+    <string name="card_number_read_error">Bank card number reading failed, please try again</string>
+
+    <string name="scan_code_title">Scan QR code</string>
+    <string name="calc_pin_error">Calculation pin exception</string>
+    <string name="show_pinpad_error">PinPad Exception</string>
+
+    <string name="card_number_confirmation_license">License confirmation</string>
+
+    <string name="card_number_confirmation_tip">Card number confirmation</string>
+    <string name="reading_card_wait">Reading card, please wait...</string>
+
+
+    <string name="trans_send_data">Sending request, please wait...</string>
+    <string name="trans_data_receiving">Receiving data, please wait...</string>
+
+    <string name="pkg_msg_type_sign_in">POS SignIn </string>
+    <string name="pkg_msg_type_sale">SALE </string>
+    <string name="pkg_msg_type_union_pay">UNION PAY</string>
+    <string name="pkg_msg_type_ali_pay">ALI PAY</string>
+    <string name="pkg_msg_type_wechat_pay">WECHAT PAY</string>
+
+    <string name="pkg_msg_type_update_dev_param">terminal param</string>
+    <string name="pkg_msg_type_update_dev_pub_key">public key</string>
+    <string name="pkg_msg_type_update_dev_tm_key">master key</string>
+
+    <string name="btn_dialog_query_trans_results">Query trans results</string>
+    <string name="bind_services_fail">The service is abnormal, please check whether the required service is installed</string>
+
+    <string name="err_kernel_restart">The terminal is powered off and has no interface. Wait 1000-1500ms</string>
+
+    <string name="gac1_approve">Approve</string>
+    <string name="gac1_deny">Deny</string>
+    <string name="gac1_online_request">Online request</string>
+    <string name="gac1_end_application">End application</string>
+    <string name="gac1_select_next">Select next</string>
+    <string name="gac1_try_another_interface">Try another interface</string>
+    <string name="gac1_retry">Retry</string>
+    <string name="gac1_reverse">Reverse</string>
+    <string name="gac1_na">N/A</string>
+
+    <string name="load_aid_capk_param">Please wait, initializing transaction related parameters...</string>
+    <string name="load_param_succ">Loading parameters successfully</string>
+    <string name="load_param_fail">Failed to load parameters</string>
+
+
+    <string name="common_permission_description_title">Permission description</string>
+    <string name="common_permission_granted">Granted</string>
+    <string name="common_permission_denied">Denied</string>
+
+    <string name="common_permission_alert">Authorization reminder</string>
+    <string name="common_permission_fail_hint">Authorization failed, please grant permission correctly</string>
+    <string name="common_permission_fail_assign_hint">Authorization failed, please grant %s correctly</string>
+    <string name="common_permission_manual_fail_hint">Failed to obtain permission, please grant permission manually</string>
+    <string name="common_permission_manual_assign_fail_hint">Failed to obtain permission, please grant %s manually</string>
+    <string name="common_permission_manual_assign_fail_background_location_hint">Failed to obtain the background location permission, please select %s in the location permission</string>
+    <string name="common_permission_manual_assign_fail_background_sensors_hint">Failed to obtain the background sensor permission, please select %s in the sensor permission</string>
+    <string name="common_permission_background_location_fail_hint">Failed to obtain background location permission,\nPlease select %s option</string>
+    <string name="common_permission_background_sensors_fail_hint">Failed to obtain background sensor permission, please select %s sensor permission</string>
+    <string name="common_permission_background_default_option_label">Allow all the time</string>
+    <string name="common_permission_media_location_hint_fail">Failed to get media location permission\nPlease clear app data and try again</string>
+    <string name="common_permission_goto_setting_page">Go to authorization</string>
+
+    <string name="common_permission_unknown">permission</string>
+    <string name="common_permission_comma">, </string>
+    <string name="common_permission_colon">: </string>
+
+    <string name="common_permission_calendar">calendar permission</string>
+    <string name="common_permission_camera">camera permission</string>
+    <string name="common_permission_contacts">contacts permission</string>
+    <string name="common_permission_location">location permission</string>
+    <string name="common_permission_location_background">background location permission</string>
+    <string name="common_permission_nearby_devices">nearby devices permission</string>
+    <string name="common_permission_microphone">microphone permission</string>
+    <string name="common_permission_phone">phone permission</string>
+    <string name="common_permission_call_logs">call logs permission</string>
+    <string name="common_permission_body_sensors">body sensors permission</string>
+    <string name="common_permission_body_sensors_background">background body sensors permission</string>
+    <string name="common_permission_activity_recognition_api29">physical activity permission</string>
+    <string name="common_permission_activity_recognition_api30">physical activity permission</string>
+    <string name="common_permission_access_media_location">read media file location permission</string>
+    <string name="common_permission_sms">sms permission</string>
+    <string name="common_permission_storage">storage permission</string>
+    <string name="common_permission_post_notifications">send notification permission</string>
+    <string name="common_permission_image_and_video">image and video permission</string>
+    <string name="common_permission_music_and_audio">music and audio permission</string>
+    <string name="common_permission_get_installed_apps">get info about installed apps permission</string>
+
+    <string name="common_permission_all_file_access">all file access permission</string>
+    <string name="common_permission_install_unknown_apps">install unknown apps permission</string>
+    <string name="common_permission_display_over_other_apps">display over other apps permission</string>
+    <string name="common_permission_modify_system_settings">modify system settings permission</string>
+    <string name="common_permission_allow_notifications">allow notifications permission</string>
+    <string name="common_permission_allow_notifications_access">allow notifications access permission</string>
+    <string name="common_permission_apps_with_usage_access">apps with usage access permission</string>
+    <string name="common_permission_alarms_reminders">alarms &amp; reminders permission</string>
+    <string name="common_permission_do_not_disturb_access">do not disturb access permission</string>
+    <string name="common_permission_ignore_battery_optimize">ignore battery optimize permission</string>
+    <string name="common_permission_picture_in_picture">picture-in-picture permission</string>
+    <string name="common_permission_vpn">\tVPN\tpermission</string>
+
+
+    <string name="network_positioning">Network positioning</string>
+    <string name="getting_location">Getting location....</string>
+    <string name="unable_locate">Unable to obtain location, please switch networks or try again later</string>
+
+    <string name="trans_type_default">Default</string>
+    <string name="trans_type_savings">Savings</string>
+    <string name="trans_type_current">Current</string>
+    <string name="trans_type_credit">Credit</string>
+    <string name="trans_type_confirm">Confirm</string>
+    <string name="trans_type_title">Please choose account type</string>
+    <string name="trans_card_manual_punch">Manual Punch</string>
+    <string name="trans_card_manual_title">Card / Manual</string>
+    <string name="trans_find_card">Find Card</string>
+    <string name="trans_processing">Transaction Processing</string>
+    <string name="trans_tip_succ">The transaction is successful. \n The transaction receipt is being printed.\n Please wait.</string>
+    <string name="trans_tip_successful">The transaction is successful</string>
+    <string name="amount_cannot_empty">Transaction amount is not allowed to be zero</string>
+    <string name="cardno_cannot_empty">Transaction card number is not allowed to be zero</string>
+    <string name="cardno_length_error">Card number length is incorrect, please re-enter</string>
+    <string name="expiry_cannot_empty">Transaction card expiry is not allowed to be zero</string>
+    <string name="expiry_format_error">Expiration date format error</string>
+    <string name="approval_cannot_empty">Transaction approval code is not allowed to be zero</string>
+    <string name="approval_format_error">Approval code format error</string>
+    <string name="printing_results">Printing Results</string>
+
+    <string name="card_number_method">Select Method</string>
+    <string name="card_number_amount">USD </string>
+    <string name="card_number_insert">Insert/Wave Card</string>
+    <string name="card_number_manual">Manual Punching</string>
+    <string name="manual_punch">Manual Punch</string>
+    <string name="manual_enter_card_number">Enter Card Number</string>
+    <string name="manual_customer_present">Customer Present</string>
+    <string name="manual_customer_not_present">Customer Not Present</string>
+    <string name="manual_card_no">Card no : </string>
+    <string name="manual_expiry">Expiry(MM/YY)</string>
+    <string name="manual_approval_code">Approval Code</string>
+    <string name="manual_pay">Pay</string>
+    <string name="manual_offline_final">Offline Final</string>
+
+    <string name="deal_print">"Printing processing..."</string>
+
+    <string name="trans_order_is_null">No Transaction</string>
+
+
+
+    <string name="lcd_tip_amount">Enter Amount</string>
+    <string name="lcd_tip_transaction_in">Processing</string>
+    <string name="lcd_tip_welcome">Welcome</string>
+    <string name="lcd_tip_transaction_completed">Payment Confirmed</string>
+    <string name="license_check_Id_Card">Id Card :</string>
+    <string name="license_check_Officer_Certificate">Officer Certificate :</string>
+    <string name="license_check_Passport">Passport :</string>
+    <string name="license_check_EntryPermit">Entry Permit :</string>
+    <string name="license_check_TemporaryIDcard">Temporary ID card  :</string>
+    <string name="license_check_Others">Others :</string>
+
+    <string name="tip_scan_qrcode">Use the rear camera to scan the QR/barcode.</string>
+
+    <string name="scanning_qrcode">Scanning QR cod...</string>
+
+
+</resources>

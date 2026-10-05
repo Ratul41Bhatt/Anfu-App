@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The terminal, with the chip slot open along its top edge. The mouth is as
+     wide as a card because the card goes in short-edge first, held landscape,
+     which is the motion the insert tile animates. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="56dp"
+    android:viewportWidth="100"
+    android:viewportHeight="56">
+    <path
+        android:fillColor="#39414F"
+        android:pathData="M8,8 L92,8 A8,8 0 0 1 100,16 L100,48 A8,8 0 0 1 92,56 L8,56 A8,8 0 0 1 0,48 L0,16 A8,8 0 0 1 8,8 Z" />
+    <path
+        android:fillColor="#232936"
+        android:pathData="M9,12 L91,12 A5,5 0 0 1 96,17 L96,39 A5,5 0 0 1 91,44 L9,44 A5,5 0 0 1 4,39 L4,17 A5,5 0 0 1 9,12 Z" />
+    <path
+        android:fillColor="#59637A"
+        android:pathData="M10,0 L90,0 A2,2 0 0 1 92,2 L92,10 A2,2 0 0 1 90,12 L10,12 A2,2 0 0 1 8,10 L8,2 A2,2 0 0 1 10,0 Z" />
+    <path
+        android:fillColor="#0C0E13"
+        android:pathData="M11,3 L89,3 L89,8 L11,8 Z" />
+    <path
+        android:fillColor="#59637A"
+        android:pathData="M18,48 L82,48 A2,2 0 0 1 84,50 L84,50 A2,2 0 0 1 82,52 L18,52 A2,2 0 0 1 16,50 L16,50 A2,2 0 0 1 18,48 Z" />
+</vector>

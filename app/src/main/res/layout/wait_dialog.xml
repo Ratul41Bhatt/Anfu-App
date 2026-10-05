@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The wait dialog.
+
+  Was a small dark grey box with a spinner in it - the Android default, and it
+  looked like one. A payment terminal shows this while a cardholder is standing
+  at the counter waiting for an answer, so it is worth more than the default.
+
+  White card, generous corner radius, real elevation, and the message given
+  room to be read rather than squeezed under the spinner. The Lottie animation
+  is the one already in the project (raw/progress); it is tinted rather than
+  replaced, so nothing new has to be shipped for this to work.
+-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="20dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    tools:context=".ui.dialog.WaitDialog">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="160dp"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingTop="22dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="20dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/progress" />
+
+        <com.hjq.widget.view.SmartTextView
+            android:id="@+id/tv_wait_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text=""
+            android:textColor="#2D3242"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:letterSpacing="0.1"
+            android:text="PLEASE WAIT"
+            android:textColor="#9AA2B1"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

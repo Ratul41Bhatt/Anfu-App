@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_activity"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ui.activity.ShowTradeOrderActivity">
+
+    <com.hjq.bar.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="#00000000"
+        app:leftIcon="@drawable/arrows_left"
+        app:leftIconHeight="@dimen/dp_18"
+        app:leftIconWidth="@dimen/dp_18"
+        app:lineVisible="false"
+        app:title="@string/trans_order"
+        app:titleColor="@color/white"
+        app:titleSize="@dimen/sp_16" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_64"
+        android:background="@drawable/test_bg_trade_top"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_26"
+        android:paddingRight="@dimen/dp_26">
+
+        <RelativeLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_11">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/anfu_test_title"
+                android:textSize="@dimen/sp_15"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/test_arrow_icon" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_bg_color"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/test_bg_trade_bottom"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_26"
+            android:paddingRight="@dimen/dp_26">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@drawable/horizontal_dotted_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="EXP DATE:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/txt_transdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="MERCHANT NAME:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:text="82982415699005C"
+                    android:id="@+id/txt_merchantname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="TERMINAL NO:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:text="48290000"
+                    android:id="@+id/txt_terminalno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="OPERATOR NO:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:text="00000001"
+                    android:id="@+id/txt_operatorno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="CARD NO:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/txt_cardno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="TXN. TYPE:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/txt_type"
+                    android:text="SALE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="METHOD:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/txt_method"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="EXP. DATE:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/txt_expdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="REF NO:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/txt_refno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="APPR. CODE:"
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/txt_appr_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="@color/common_textcolor_73"
+                    android:textSize="@dimen/sp_12" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/horizontal_dotted_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="AMOUNT"
+                    android:textSize="@dimen/sp_17"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txt_transamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="@dimen/sp_18"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

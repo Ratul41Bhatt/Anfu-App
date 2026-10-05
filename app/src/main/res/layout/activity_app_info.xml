@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  App Information. The PAX reference prints this block from ReceiptAppInfo and
+  shows the version alone on its terminal menu; here the screen carries the
+  whole slip. The rows are inflated from item_app_info.xml, one per fact.
+
+  The root carries an id because AppActivity runs an immersive, edge-to-edge
+  status bar and only pushes content down when the layout contains a TitleBar.
+  This screen has none, so the first row landed underneath the clock and the
+  battery. AppInfoActivity pads the top by the measured status bar height - a
+  hardcoded dp would be wrong on the first device with a notch.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/info_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <!-- Back row, in the app's own style. There was no way out of this screen
+         except the system back gesture. -->
+    <LinearLayout android:id="@+id/info_back" style="@style/PaxRow">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="‹" android:textColor="#5B7BF6" android:textSize="26sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:layout_marginStart="10dp"
+            android:text="App Information" android:textColor="#5B7BF6"
+            android:textSize="18sp" android:textStyle="bold" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/info_merchant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="16dp"
+                android:textColor="#100567"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/info_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="16dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="4dp"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <View style="@style/PaxDivider" />
+            <TextView style="@style/PaxGroupHeader" android:textSize="14sp" android:text="TERMINAL" />
+            <View style="@style/PaxDivider" />
+
+            <!-- Merchant, terminal and batch identifiers. They used to be one
+                 11sp monospace line squeezed across the width, which is the
+                 row that reads badly on the device. Same row component as the
+                 facts below now, so the whole screen is one list. -->
+            <LinearLayout
+                android:id="@+id/info_ids"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <View style="@style/PaxDivider" />
+            <TextView style="@style/PaxGroupHeader" android:textSize="14sp" android:text="APPLICATION" />
+            <View style="@style/PaxDivider" />
+
+            <LinearLayout
+                android:id="@+id/info_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <View style="@style/PaxDivider" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- The two actions. Cancel on the left, where a reader expects to back
+         out; print on the right. Print is the wider of the two only because its
+         label is longer - not to make it the easier one to hit. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingTop="12dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/info_cancel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_cancel_red"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="CANCEL"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/info_print"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1.4"
+            android:background="@drawable/btn_confirm_green"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="PRINT APPLICATION INFO"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View style="@style/PaxDivider" />
+
+    <TextView
+        android:id="@+id/info_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F6F8"
+        android:maxLines="4"
+        android:padding="12dp"
+        android:textColor="#333333"
+        android:textSize="13sp" />
+</LinearLayout>

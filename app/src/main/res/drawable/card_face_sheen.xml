@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A faint diagonal highlight over the card face. Costs nothing and stops the
+     panel reading as a flat blue rectangle. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="135"
+        android:startColor="#22FFFFFF"
+        android:centerColor="#00FFFFFF"
+        android:endColor="#10FFFFFF"
+        android:type="linear" />
+    <corners android:radius="14dp" />
+</shape>

@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Admin panel in the PAX settings design language (item_config_first /
+  item_config_second): a white list of ?actionBarSize rows, 16sp #333333 titles
+  with a 12sp #888888 value underneath, a chevron or a switch on the right,
+  hairline #bbbbbb dividers and a thick #e3e3e3 band between groups.
+
+  The root carries an id because AppActivity runs an immersive, edge-to-edge
+  status bar and only pushes content down when the layout contains a TitleBar.
+  This screen has none, so ADMIN PANEL and the build line landed underneath the
+  clock. AdminActivity pads the top by the measured status bar height.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/admin_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <!-- Shared header. Sits above the ViewFlipper so every page has one and
+         nothing can ride up under the notch: AdminActivity pads admin_root by
+         the measured status bar height and this bar is the first child. -->
+    <LinearLayout android:id="@+id/admin_header" style="@style/PaxHeaderBar">
+        <TextView android:id="@+id/tv_admin_header_title" style="@style/PaxHeaderTitle"
+            android:text="ADMIN PANEL" />
+        <TextView android:id="@+id/tv_admin_header_sub" style="@style/PaxHeaderSub" />
+    </LinearLayout>
+    <View android:layout_width="match_parent" android:layout_height="2dp"
+        android:background="#123A9E" />
+
+    <ViewFlipper
+        android:id="@+id/admin_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="#FFFFFF" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView android:id="@+id/tv_admin_title" style="@style/PaxGroupHeader"
+                    android:text="TERMINAL" />
+                <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_comm" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Communication" />
+            <TextView android:id="@+id/tv_comm_value"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textColor="#888888" android:textSize="12sp" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_param" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Parameter" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_clear" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Clear" />
+            <TextView android:id="@+id/tv_clear_value" style="@style/PaxRowValue" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_menuctl" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Menu Control" />
+            <TextView android:id="@+id/tv_menuctl_value" style="@style/PaxRowValue" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_emi" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="EMI" />
+            <TextView android:id="@+id/tv_emi_value" style="@style/PaxRowValue" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_ranges" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Card Range" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_emi_ranges" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="EMI Card Range" />
+            <TextView android:id="@+id/tv_emi_range_value" style="@style/PaxRowValue" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="SECURITY" />
+                <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_keys" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Key Injection" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_device_settings" style="@style/PaxRow">
+        <TextView style="@style/PaxRowTitle" android:text="Device Settings" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+    <LinearLayout android:id="@+id/btn_device_lock" style="@style/PaxRow">
+        <TextView style="@style/PaxRowTitle" android:text="Device Lock Status / Retry" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+    <LinearLayout android:id="@+id/btn_opt_pw" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Password Manager" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="HOST" />
+                <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_logon" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Logon" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_opt_counters" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Invoice / Batch / STAN" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+                <View style="@style/PaxGroupGap" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="#FFFFFF" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_comm" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Communication" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="TERMINAL" />
+                <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Terminal ID (TID)" />
+                <EditText android:id="@+id/et_tid" style="@style/PaxField" android:inputType="text" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Merchant ID (MID)" />
+                <EditText android:id="@+id/et_mid" style="@style/PaxField" android:inputType="text" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Master key index" />
+                <EditText android:id="@+id/et_mkindex" style="@style/PaxField" android:inputType="number" />
+                <View style="@style/PaxGroupGap" android:layout_marginTop="14dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="HOST" />
+                <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Host IP" />
+                <EditText android:id="@+id/et_ip" style="@style/PaxField" android:inputType="text" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Host port" />
+                <EditText android:id="@+id/et_port" style="@style/PaxField" android:inputType="number" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="NII / function code" />
+                <EditText android:id="@+id/et_nii" style="@style/PaxField" android:inputType="number" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="TPDU (10 hex)" />
+                <EditText android:id="@+id/et_tpdu" style="@style/PaxField" android:inputType="text" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Comm timeout (ms)" />
+                <EditText android:id="@+id/et_timeout" style="@style/PaxField" android:inputType="number" />
+                <Button android:id="@+id/btn_save_comm" style="@style/PaxPrimaryButton"
+                    android:text="SAVE COMMUNICATION" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="#FFFFFF" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_keys" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Key Injection" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="MASTER KEY (TMK)" />
+                <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Key components (space or + separated)" />
+                <EditText android:id="@+id/et_master_key" style="@style/PaxField" android:inputType="text" />
+                <Button android:id="@+id/btn_inject_master" style="@style/PaxPrimaryButton"
+                    android:text="INJECT MASTER KEY" />
+                <View style="@style/PaxGroupGap" android:layout_marginTop="18dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="WORKING KEY" />
+                <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Key ID" />
+                <EditText android:id="@+id/et_wk_id" style="@style/PaxField" android:inputType="number" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Key value" />
+                <EditText android:id="@+id/et_wk_key" style="@style/PaxField" android:inputType="text" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="KCV" />
+                <EditText android:id="@+id/et_wk_kcv" style="@style/PaxField" android:inputType="text" />
+                <Button android:id="@+id/btn_inject_working" style="@style/PaxSecondaryButton"
+                    android:text="INJECT WORKING KEY" />
+                <Button android:id="@+id/btn_read_kcv" style="@style/PaxSecondaryButton"
+                    android:text="READ KCV" />
+                <Button android:id="@+id/btn_print_kcv" style="@style/PaxSecondaryButton"
+                    android:text="PRINT KCV" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="#FFFFFF" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_pw" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Password Manager" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="PASSWORD MANAGER" />
+                <View style="@style/PaxDivider" />
+                <TextView style="@style/PaxFieldLabel" android:text="Menu" />
+                <Spinner android:id="@+id/sp_pw_target"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp" android:layout_marginRight="15dp" />
+                <TextView style="@style/PaxFieldLabel" android:text="Password" />
+                <EditText android:id="@+id/et_pw_value" style="@style/PaxField"
+                    android:inputType="numberPassword" />
+                <Button android:id="@+id/btn_set_pw" style="@style/PaxPrimaryButton"
+                    android:text="SET PASSWORD" />
+                <Button android:id="@+id/btn_clear_pw" style="@style/PaxSecondaryButton"
+                    android:text="CLEAR PASSWORD" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="#FFFFFF" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_logon" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Logon" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="LOGON" />
+                <View style="@style/PaxDivider" />
+                <Button android:id="@+id/btn_run_logon" style="@style/PaxPrimaryButton"
+                    android:text="RUN LOGON" />
+                <Button android:id="@+id/btn_print_logon" style="@style/PaxSecondaryButton"
+                    android:text="PRINT LAST LOGON" />
+                <Button android:id="@+id/btn_de62_diag" style="@style/PaxSecondaryButton"
+                    android:text="DE62 DIAGNOSTIC" />
+                <TextView android:id="@+id/tv_logon_log"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_margin="15dp" android:textSize="11sp"
+                    android:textColor="#555555" android:fontFamily="monospace" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="#FFFFFF" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_counters" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Invoice / Batch / STAN" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="TRANSACTION DATA" />
+                <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Invoice number" />
+                <EditText android:id="@+id/et_invoice" style="@style/PaxField" android:inputType="number" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Batch number" />
+                <EditText android:id="@+id/et_batch" style="@style/PaxField" android:inputType="number" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="STAN" />
+                <EditText android:id="@+id/et_stan" style="@style/PaxField" android:inputType="number" />
+                <Button android:id="@+id/btn_save_counters" style="@style/PaxPrimaryButton"
+                    android:text="SAVE" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="#FFFFFF" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_param" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Parameter" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="DISPLAY AND SLIP" />
+                <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_card_mask" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Card Masking" />
+            <TextView android:id="@+id/tv_card_mask_value" style="@style/PaxRowValue"
+                android:text="MIDDLE" />
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_debug" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Debug" />
+            <TextView android:id="@+id/tv_debug_value" style="@style/PaxRowValue"
+                android:text="Off" />
+        </LinearLayout>
+        <Switch android:id="@+id/sw_debug"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:clickable="false" android:focusable="false" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="SETTLEMENT" />
+                <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_settle_detail" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="Settle Details Report" />
+            <TextView android:id="@+id/tv_settle_detail_value" style="@style/PaxRowValue"
+                android:text="On" />
+        </LinearLayout>
+        <Switch android:id="@+id/sw_settle_detail"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:clickable="false" android:focusable="false" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Settle require days (0 = never prompt)" />
+                <EditText android:id="@+id/et_settle_days" style="@style/PaxField" android:inputType="number" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Reversal retry times (1-20, default 5)" />
+                <EditText android:id="@+id/et_reversal_tries" style="@style/PaxField" android:inputType="number" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="15dp" android:paddingRight="15dp"
+                    android:textSize="12sp" android:textColor="#888888"
+                    android:text="How many times an unacknowledged reversal is re-sent before the terminal stops retrying on its own. The reversal is NOT dropped at that point - it still blocks settlement and still shows on the home screen. Only Clear - Reversal Clear drops it." />
+                <View style="@style/PaxGroupGap" android:layout_marginTop="14dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="PIN AND CONTACTLESS" />
+                <View style="@style/PaxDivider" />
+
+    <LinearLayout android:id="@+id/btn_pinpad_mode" style="@style/PaxRow">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView style="@style/PaxRowTitle" android:text="PIN Pad" />
+            <TextView android:id="@+id/tv_pinpad_value" style="@style/PaxRowValue"
+                android:text="Static" />
+        </LinearLayout>
+        <Switch android:id="@+id/sw_pinpad"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:clickable="false" android:focusable="false" />
+    </LinearLayout>
+    <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Contactless limit (no PIN at or below)" />
+                <EditText android:id="@+id/et_cless_limit" style="@style/PaxField" android:inputType="numberDecimal" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Card number length - minimum digits" />
+                <EditText android:id="@+id/et_pan_min_len" style="@style/PaxField"
+                    android:inputType="number" android:maxLength="2" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Card number length - maximum digits" />
+                <EditText android:id="@+id/et_pan_max_len" style="@style/PaxField"
+                    android:inputType="number" android:maxLength="2" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Menu timeout, seconds (0 = off)" />
+                <EditText android:id="@+id/et_idle_timeout" style="@style/PaxField"
+                    android:inputType="number" android:maxLength="3" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Merchant name" />
+                <EditText android:id="@+id/et_merchant_name" style="@style/PaxField" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Address line 1" />
+                <EditText android:id="@+id/et_addr1" style="@style/PaxField" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Address line 2" />
+                <EditText android:id="@+id/et_addr2" style="@style/PaxField" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Address line 3" />
+                <EditText android:id="@+id/et_addr3" style="@style/PaxField" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Address line 4" />
+                <EditText android:id="@+id/et_addr4" style="@style/PaxField" />
+
+                <View style="@style/PaxGroupGap" android:layout_marginTop="14dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="ENTRY MODE" />
+                <View style="@style/PaxDivider" />
+
+                <CheckBox android:id="@+id/cb_entry_chip"
+                    style="@style/PaxCheckBox" android:text="CHIP" />
+                <CheckBox android:id="@+id/cb_entry_ctls"
+                    style="@style/PaxCheckBox" android:text="NFC" />
+                <CheckBox android:id="@+id/cb_entry_swipe"
+                    style="@style/PaxCheckBox" android:text="SWIPE" />
+                <CheckBox android:id="@+id/cb_entry_fallback"
+                    style="@style/PaxCheckBox" android:text="FALLBACK" />
+                <CheckBox android:id="@+id/cb_entry_manual"
+                    style="@style/PaxCheckBox" android:text="MANUAL" />
+
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="22dp" android:paddingRight="22dp"
+                    android:layout_marginTop="6dp" android:textSize="20sp"
+                    android:textColor="#5C6B85"
+                    android:text="Only the ticked readers are armed when a transaction starts - an unticked mode is never listened for, not read and then refused. FALLBACK lets a chip card be taken on its stripe after three failed chip reads; it is flagged to the issuer as a fallback. MANUAL adds a KEY IN option: no chip cryptogram and no track, so the merchant carries the fraud liability." />
+
+                <View style="@style/PaxGroupGap" android:layout_marginTop="14dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="CARD EXPIRY" />
+                <View style="@style/PaxDivider" />
+
+                <CheckBox android:id="@+id/cb_check_expiring_date"
+                    style="@style/PaxCheckBox" android:text="Check Expiring Date" />
+
+                <View style="@style/PaxGroupGap" android:layout_marginTop="14dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="RECEIPT LOGOS" />
+                <View style="@style/PaxDivider" />
+
+                <CheckBox android:id="@+id/cb_bank_logo"
+                    style="@style/PaxCheckBox" android:text="Print bank logo" />
+
+                <CheckBox android:id="@+id/cb_merchant_logo"
+                    style="@style/PaxCheckBox" android:text="Print merchant logo (half + half)" />
+
+                <View style="@style/PaxGroupGap" android:layout_marginTop="14dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="CUSTOMER COPY" />
+                <View style="@style/PaxDivider" />
+
+                <CheckBox android:id="@+id/cb_customer_copy"
+                    style="@style/PaxCheckBox" android:text="Print Customer Copy prompt" />
+
+                <TextView
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="22dp" android:paddingRight="22dp"
+                    android:layout_marginTop="6dp" android:textSize="20sp"
+                    android:textColor="#5C6B85"
+                    android:text="When ON: terminal asks 'Print Customer Copy?' only after a successful transaction.\nWhen OFF: terminal only prints 1 single copy for every transaction." />
+
+                <View style="@style/PaxGroupGap" />
+
+                <TextView style="@style/PaxGroupHeader" android:text="QR SALE" />
+                <TextView style="@style/PaxFieldLabel" android:text="QR NII (bank-assigned QR network)" />
+                <EditText android:id="@+id/et_qr_nii" style="@style/PaxField" android:inputType="number" android:maxLength="3" />
+                <TextView style="@style/PaxFieldLabel" android:text="QR TPDU (blank uses 6000050000)" />
+                <EditText android:id="@+id/et_qr_tpdu" style="@style/PaxField" android:inputType="textCapCharacters" android:maxLength="10" />
+                <TextView style="@style/PaxFieldLabel" android:text="Merchant category code (MCC, blank uses 5411)" />
+                <EditText android:id="@+id/et_qr_mcc" style="@style/PaxField" android:inputType="number" android:maxLength="4" />
+                <TextView style="@style/PaxFieldLabel" android:text="Store label (optional, only if assigned by DBBL)" />
+                <EditText android:id="@+id/et_qr_sid" style="@style/PaxField" android:maxLength="25" />
+                <TextView style="@style/PaxFieldLabel" android:text="Uses the terminal merchant name and address. MCC is assigned by the bank." />
+                <TextView style="@style/PaxFieldLabel" android:text="QR Sale idle timeout (seconds, 10–600)" />
+                <EditText android:id="@+id/et_qr_timeout" style="@style/PaxField" android:inputType="number" android:maxLength="3" />
+                <Button android:id="@+id/btn_save_qr" style="@style/PaxPrimaryButton" android:text="SAVE QR SETTINGS" />
+                <TextView style="@style/PaxGroupHeader" android:text="TIP" />
+                <CheckBox android:id="@+id/cb_sale_tip" style="@style/PaxCheckBox" android:text="Sale with Tip" />
+                <CheckBox android:id="@+id/cb_tip_adjust" style="@style/PaxCheckBox" android:text="Tip Adjust" />
+                <TextView style="@style/PaxGroupHeader" android:text="Tip percentage (maximum)" />
+                <EditText android:id="@+id/et_tip_percent" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_margin="20dp"
+                    android:inputType="number" android:maxLength="3" android:hint="0 to 100%" />
+                <Button android:id="@+id/btn_save_tip" style="@style/PaxPrimaryButton"
+                    android:text="SAVE TIP SETTINGS" />
+                <TextView style="@style/PaxGroupHeader" android:text="PRE-AUTH" />
+                <TextView style="@style/PaxFieldLabel"
+                    android:text="Pre Auth Percentage (%) - the largest Sale Completion allowed, as a percentage of the pre-auth amount. 125 = up to 25% more than the pre-auth. 100 to 999." />
+                <EditText android:id="@+id/et_preauth_percent" style="@style/PaxField"
+                    android:inputType="number" android:maxLength="3" android:hint="125" />
+                <Button android:id="@+id/btn_save_param" style="@style/PaxPrimaryButton"
+                    android:text="SAVE" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="#FFFFFF" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_ranges" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Card Range" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="ACCEPTED CARD RANGES" />
+                <View style="@style/PaxDivider" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="15dp" android:paddingRight="15dp" android:paddingTop="8dp"
+                    android:textSize="12sp" android:textColor="#888888"
+                    android:text="Cards outside every range are refused at the terminal. The name is what prints on the slip. Tick ON-US for a range the bank issues itself - the slip says ON-US for those and OFF-US for every other card." />
+                <LinearLayout android:id="@+id/range_rows"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:paddingLeft="15dp"
+                    android:paddingRight="15dp" android:layout_marginTop="6dp" />
+                <View style="@style/PaxGroupGap" android:layout_marginTop="10dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="ADD A RANGE" />
+                <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Name (prints on the slip)" />
+                <EditText android:id="@+id/et_range_name" style="@style/PaxField" android:inputType="textCapCharacters" android:hint="e.g. TAKAPAY" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="PAN range low (BIN, e.g. 100002)" />
+                <EditText android:id="@+id/et_range_low" style="@style/PaxField" android:inputType="number" android:hint="639996000000" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="PAN range high (BIN, e.g. 100002)" />
+                <EditText android:id="@+id/et_range_high" style="@style/PaxField" android:inputType="number" android:hint="639996999999" />
+
+                <CheckBox android:id="@+id/cb_range_onus"
+                    style="@style/PaxCheckBox" android:layout_marginTop="8dp"
+                    android:text="ON-US - the bank issues these cards itself" />
+                <Button android:id="@+id/btn_range_add" style="@style/PaxPrimaryButton"
+                    android:text="ADD RANGE" />
+                <Button android:id="@+id/btn_range_reset" style="@style/PaxSecondaryButton"
+                    android:text="RESTORE DEFAULT RANGES" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ===================== CHILD 8: EMI ===================== -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_emi" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="&#8249;" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="EMI" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+
+                <TextView style="@style/PaxGroupHeader" android:text="EMI CONTROL" />
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/btn_emi_enabled" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="EMI Transactions" />
+                        <TextView android:id="@+id/tv_emi_enabled_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <Switch android:id="@+id/sw_emi_enabled"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:clickable="false" android:focusable="false" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/btn_emi_pkg_print" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="EMI Package Print" />
+                        <TextView android:id="@+id/tv_emi_pkg_print_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <Switch android:id="@+id/sw_emi_pkg_print"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:clickable="false" android:focusable="false" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="EMI NII (DE24 on the EMI sale)" />
+                <EditText android:id="@+id/et_emi_nii" style="@style/PaxField"
+                    android:inputType="number" android:maxLength="3" android:hint="295" />
+
+                <Button android:id="@+id/btn_emi_print" style="@style/PaxSecondaryButton"
+                    android:text="PRINT EMI PACKAGES" />
+
+                <View style="@style/PaxGroupGap" android:layout_marginTop="16dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="EMI PACKAGES" />
+                <View style="@style/PaxDivider" />
+                <LinearLayout android:id="@+id/emi_pkg_rows"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:paddingLeft="15dp"
+                    android:paddingRight="15dp" />
+
+                <View style="@style/PaxGroupGap" android:layout_marginTop="10dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="ADD A PACKAGE" />
+                <View style="@style/PaxDivider" />
+                <TextView style="@style/PaxFieldLabel" android:text="Product code (3)" />
+                <EditText android:id="@+id/et_emi_code" style="@style/PaxField"
+                    android:inputType="text" android:maxLength="3" android:hint="001" />
+                <TextView style="@style/PaxFieldLabel" android:text="Tenure in months" />
+                <EditText android:id="@+id/et_emi_tenure" style="@style/PaxField"
+                    android:inputType="number" android:maxLength="2" android:hint="6" />
+                <TextView style="@style/PaxFieldLabel" android:text="Interest rate (0.10 = 10%)" />
+                <EditText android:id="@+id/et_emi_rate" style="@style/PaxField"
+                    android:inputType="numberDecimal" android:hint="0.10" />
+                <TextView style="@style/PaxFieldLabel" android:text="Interest index (3)" />
+                <EditText android:id="@+id/et_emi_index" style="@style/PaxField"
+                    android:inputType="text" android:maxLength="3" android:hint="030" />
+                <TextView style="@style/PaxFieldLabel" android:text="Description" />
+                <EditText android:id="@+id/et_emi_desc" style="@style/PaxField"
+                    android:inputType="text" android:hint="6 MONTHS 10%" />
+                <Button android:id="@+id/btn_emi_add" style="@style/PaxPrimaryButton"
+                    android:text="ADD PACKAGE" />
+
+                <View style="@style/PaxGroupGap" android:layout_marginTop="16dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="TENURE CONTROL" />
+                <View style="@style/PaxDivider" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="15dp" android:paddingRight="15dp" android:paddingTop="8dp"
+                    android:textSize="12sp" android:textColor="#888888"
+                    android:text="Only the terms switched on here are offered at the till." />
+                <LinearLayout android:id="@+id/emi_tenure_rows"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ===================== CHILD 9: MENU CONTROL ===================== -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_menuctl" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="&#8249;" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Menu Control" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+
+                <TextView style="@style/PaxGroupHeader" android:text="MENU HIDE" />
+                <View style="@style/PaxDivider" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="15dp" android:paddingRight="15dp" android:paddingTop="8dp"
+                    android:textSize="12sp" android:textColor="#888888"
+                    android:text="Switch a tile off to remove it from the main screen. Sale, Void, EMI Sale and Refund also control whether the row prints on the settlement slip." />
+                <LinearLayout android:id="@+id/menu_hide_rows"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:layout_marginTop="6dp" />
+
+                <View style="@style/PaxGroupGap" android:layout_marginTop="14dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="TRANSACTION CONTROL" />
+                <View style="@style/PaxDivider" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="15dp" android:paddingRight="15dp" android:paddingTop="8dp"
+                    android:textSize="12sp" android:textColor="#888888"
+                    android:text="Switch a transaction off to refuse it. The tile stays on screen and says Transaction Not Allowed, so the operator is told why." />
+                <LinearLayout android:id="@+id/trans_control_rows"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ===================== CHILD 10: CLEAR ===================== -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_clear" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="&#8249;" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Clear" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:padding="15dp" android:textSize="12sp" android:textColor="#B00020"
+                    android:text="These delete records the host still holds. Clearing does NOT tell the bank anything - it only makes the terminal forget. Settle first wherever possible." />
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/btn_clear_batch" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Batch Clear" />
+                        <TextView android:id="@+id/tv_clear_batch_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/btn_clear_reversal" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Reversal Clear" />
+                        <TextView android:id="@+id/tv_clear_reversal_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/btn_clear_preauth" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Pre-Auth Clear" />
+                        <TextView android:id="@+id/tv_clear_preauth_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+
+                <TextView style="@style/PaxGroupHeader" android:text="ALSO" />
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/btn_clear_errors" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Error Log Clear" />
+                        <TextView android:id="@+id/tv_clear_errors_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ===================== CHILD 11: EMI CARD RANGE ===================== -->
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="#FFFFFF" android:fillViewport="true">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:paddingBottom="24dp">
+
+                <LinearLayout android:id="@+id/btn_back_emi_ranges" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="EMI Card Range" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+                <TextView style="@style/PaxGroupHeader" android:text="EMI CARD RANGES" />
+                <View style="@style/PaxDivider" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="15dp" android:paddingRight="15dp" android:paddingTop="8dp"
+                    android:textSize="12sp" android:textColor="#888888"
+                    android:text="Cards that may be sold on instalments. A card outside every range here is refused on an EMI sale with THIS CARD DOES NOT SUPPORT EMI - it can still be used for an ordinary sale. WHILE THIS LIST IS EMPTY NO CARD CAN DO EMI: add the BIN ranges the bank issues EMI on before enabling EMI." />
+                <LinearLayout android:id="@+id/emi_range_rows"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:paddingLeft="15dp"
+                    android:paddingRight="15dp" android:layout_marginTop="6dp" />
+                <View style="@style/PaxGroupGap" android:layout_marginTop="10dp" />
+                <TextView style="@style/PaxGroupHeader" android:text="ADD AN EMI RANGE" />
+                <View style="@style/PaxDivider" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="Name (the EMI programme or scheme)" />
+                <EditText android:id="@+id/et_emi_range_name" style="@style/PaxField"
+                    android:inputType="textCapCharacters" android:hint="e.g. DBBL VISA EMI" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="PAN range low (BIN, e.g. 441358)" />
+                <EditText android:id="@+id/et_emi_range_low" style="@style/PaxField"
+                    android:inputType="number" android:hint="441358000000" />
+
+                <TextView style="@style/PaxFieldLabel" android:text="PAN range high (BIN, e.g. 441358)" />
+                <EditText android:id="@+id/et_emi_range_high" style="@style/PaxField"
+                    android:inputType="number" android:hint="441358999999" />
+
+                <Button android:id="@+id/btn_emi_range_add" style="@style/PaxPrimaryButton"
+                    android:text="ADD EMI RANGE" />
+                <Button android:id="@+id/btn_emi_range_clear" style="@style/PaxSecondaryButton"
+                    android:text="CLEAR EMI RANGES" />
+            </LinearLayout>
+        </ScrollView>
+    </ViewFlipper>
+
+    <View style="@style/PaxDivider" />
+
+    <!--
+      Scrollable, and NOT line-limited. A key injection or KCV report runs to
+      fifteen or more lines; the previous maxLines="8" silently cut them off,
+      which made a successful injection look like nothing had happened and hid
+      the reason when one failed.
+    -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#F5F6F8"
+        android:fillViewport="true"
+        android:maxHeight="220dp">
+
+        <TextView
+            android:id="@+id/tv_admin_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:padding="12dp"
+            android:textColor="#333333"
+            android:textIsSelectable="true"
+            android:textSize="11sp" />
+    </ScrollView>
+</LinearLayout>

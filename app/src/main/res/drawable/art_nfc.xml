@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The contactless field: four arcs radiating from the terminal's screen,
+     where the antenna sits. Near-white rather than blue, because these are
+     drawn over the blue screen and blue-on-blue disappeared. Animated by
+     scaling and fading, which is what a radio field looks like to a person. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="44dp"
+    android:viewportWidth="64"
+    android:viewportHeight="44">
+    <path
+        android:pathData="M26,42 A10,10 0 0 1 38,42"
+        android:strokeColor="#E4EEFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M18,42 A18,18 0 0 1 46,42"
+        android:strokeColor="#E4EEFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M10,42 A26,26 0 0 1 54,42"
+        android:strokeColor="#E4EEFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M2,42 A34,34 0 0 1 62,42"
+        android:strokeColor="#E4EEFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round" />
+</vector>

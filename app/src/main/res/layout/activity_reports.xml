@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Reports menu, matching the PAX BatchReportMenuActivity item for item and
+  drawn in the PAX settings design language.
+
+  The root carries an id for the same reason the admin panel's does: there is
+  no TitleBar on this screen, so without a measured top pad the REPORTS heading
+  sits underneath the status bar.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/report_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <ViewFlipper
+        android:id="@+id/report_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- ================= CHILD 0: the report list ================= -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView style="@style/PaxGroupHeader" android:text="REPORTS" />
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/rep_last_txn" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Last Transaction" />
+                        <TextView android:id="@+id/rep_last_txn_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/rep_reprint" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Reprint" />
+                        <TextView style="@style/PaxRowValue" android:text="By invoice number" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/rep_detail" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Detail Report" />
+                        <TextView android:id="@+id/rep_detail_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/rep_qr" style="@style/PaxRow">
+                    <TextView style="@style/PaxRowTitle" android:text="QR Sale Reports / Reprint" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+                <LinearLayout android:id="@+id/rep_emi" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="EMI Report" />
+                        <TextView android:id="@+id/rep_emi_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/rep_issuer" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Card Issuer Report" />
+                        <TextView style="@style/PaxRowValue" android:text="Totals per card scheme" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+
+                <TextView style="@style/PaxGroupHeader" android:text="HISTORY" />
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/rep_last_settle" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Last Settlement" />
+                        <TextView android:id="@+id/rep_last_settle_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/rep_error" style="@style/PaxRow">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView style="@style/PaxRowTitle" android:text="Error Transaction Report" />
+                        <TextView android:id="@+id/rep_error_value" style="@style/PaxRowValue" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ============ CHILD 1: last transaction, which copy ============ -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout android:id="@+id/rep_back_copy" style="@style/PaxRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="10dp"
+                        android:text="Last Transaction" android:textColor="#5B7BF6"
+                        android:textSize="16sp" android:textStyle="bold" />
+                </LinearLayout>
+                <View style="@style/PaxGroupGap" />
+
+                <TextView android:id="@+id/rep_copy_summary"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:padding="15dp" android:textColor="#333333" android:textSize="13sp"
+                    android:fontFamily="monospace" />
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/rep_merchant_copy" style="@style/PaxRow">
+                    <TextView style="@style/PaxRowTitle" android:layout_width="0dp"
+                        android:layout_weight="1" android:text="Merchant Copy" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+
+                <LinearLayout android:id="@+id/rep_customer_copy" style="@style/PaxRow">
+                    <TextView style="@style/PaxRowTitle" android:layout_width="0dp"
+                        android:layout_weight="1" android:text="Customer Copy" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textColor="#B0B7C3" android:textSize="20sp" />
+                </LinearLayout>
+                <View style="@style/PaxDivider" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ============ CHILD 2: reprint by invoice ============ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout android:id="@+id/rep_back_reprint" style="@style/PaxRow">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="‹" android:textColor="#5B7BF6" android:textSize="22sp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="10dp"
+                    android:text="Reprint" android:textColor="#5B7BF6"
+                    android:textSize="16sp" android:textStyle="bold" />
+            </LinearLayout>
+            <View style="@style/PaxGroupGap" />
+
+            <TextView style="@style/PaxFieldLabel"
+                android:text="Invoice number of the transaction to reprint" />
+
+            <TextView
+                android:id="@+id/rep_invoice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="8dp"
+                android:background="#EEF1FA"
+                android:gravity="center"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="------"
+                android:textColor="#100567"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/rep_invoice_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="8dp"
+                android:textColor="#888888"
+                android:textSize="12sp" />
+
+            <com.hjq.demo.ui.view.KeyBoardView
+                android:id="@+id/rep_keyboard"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </ViewFlipper>
+
+    <View style="@style/PaxDivider" />
+
+    <TextView
+        android:id="@+id/rep_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F6F8"
+        android:fontFamily="monospace"
+        android:maxLines="6"
+        android:padding="12dp"
+        android:textColor="#333333"
+        android:textSize="11sp" />
+</LinearLayout>

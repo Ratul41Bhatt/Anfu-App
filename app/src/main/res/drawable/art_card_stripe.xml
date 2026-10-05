@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A payment card seen from the back, for the swipe tile: signature panel
+     across the middle, magnetic stripe along the bottom edge. The stripe is on
+     the bottom because that is the edge that runs through the groove, so the
+     reader hides it - and because a stripe drawn along the top sat right above
+     the reader's own black groove and the two read as one shape. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="64dp"
+    android:viewportWidth="100"
+    android:viewportHeight="64">
+    <path
+        android:fillColor="#1B3A6B"
+        android:pathData="M7,0 L93,0 A7,7 0 0 1 100,7 L100,57 A7,7 0 0 1 93,64 L7,64 A7,7 0 0 1 0,57 L0,7 A7,7 0 0 1 7,0 Z" />
+    <path
+        android:fillColor="#22497F"
+        android:pathData="M7,0 L93,0 A7,7 0 0 1 100,7 L100,11 A7,7 0 0 1 93,18 L7,18 A7,7 0 0 1 0,11 L0,7 A7,7 0 0 1 7,0 Z" />
+    <path
+        android:fillColor="#22497F"
+        android:pathData="M0,11 L100,11 L100,18 L0,18 Z" />
+    <path
+        android:fillColor="#EDEFF4"
+        android:pathData="M10,24 L68,24 A2,2 0 0 1 70,26 L70,33 A2,2 0 0 1 68,35 L10,35 A2,2 0 0 1 8,33 L8,26 A2,2 0 0 1 10,24 Z" />
+    <path
+        android:fillColor="#33558C"
+        android:pathData="M76,24 L90,24 A2,2 0 0 1 92,26 L92,33 A2,2 0 0 1 90,35 L76,35 A2,2 0 0 1 74,33 L74,26 A2,2 0 0 1 76,24 Z" />
+    <path
+        android:fillColor="#4B6EA8"
+        android:pathData="M10,40 L46,40 A2,2 0 0 1 48,42 L48,42 A2,2 0 0 1 46,44 L10,44 A2,2 0 0 1 8,42 L8,42 A2,2 0 0 1 10,40 Z" />
+    <path
+        android:fillColor="#1A1D24"
+        android:pathData="M0,50 L100,50 L100,62 L0,62 Z" />
+</vector>

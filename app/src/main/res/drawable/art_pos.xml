@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- An Android smart POS, front on, which is what an AF980 is: the screen takes
+     almost the whole front, with a thin chin under it rather than a keypad.
+
+     Redrawn at 100x166 rather than resized. The ImageView uses the default
+     fitCenter, so a taller drawing asked for a shorter box letterboxes itself
+     and comes out narrower too - the height has to change in the artwork for
+     the width to stay put.
+
+     All three card interfaces are on the one body because they are on the one
+     device: the contactless field over the screen, the stripe groove down the
+     right edge, the chip slot in the bottom edge. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="166dp"
+    android:viewportWidth="100"
+    android:viewportHeight="166">
+    <path
+        android:fillColor="#C4372E"
+        android:pathData="M12,3.3 L88,3.3 A12,12 0 0 1 100,15.3 L100,154 A12,12 0 0 1 88,166 L12,166 A12,12 0 0 1 0,154 L0,15.3 A12,12 0 0 1 12,3.3 Z" />
+    <path
+        android:fillColor="#9E2A23"
+        android:pathData="M13,5.2 L87,5.2 A10,10 0 0 1 97,15.2 L97,154 A10,10 0 0 1 87,164 L13,164 A10,10 0 0 1 3,154 L3,15.2 A10,10 0 0 1 13,5.2 Z" />
+    <path
+        android:fillColor="#C4372E"
+        android:pathData="M13,5.9 L87,5.9 A9,9 0 0 1 96,14.9 L96,154.4 A9,9 0 0 1 87,163.4 L13,163.4 A9,9 0 0 1 4,154.4 L4,14.9 A9,9 0 0 1 13,5.9 Z" />
+    <path
+        android:fillColor="#D4574E"
+        android:pathData="M27,0 L73,0 A3,3 0 0 1 76,3 L76,2.2 A3,3 0 0 1 73,5.2 L27,5.2 A3,3 0 0 1 24,2.2 L24,3 A3,3 0 0 1 27,0 Z" />
+    <path
+        android:fillColor="#12161D"
+        android:pathData="M27,1.3 L73,1.3 L73,3.9 L27,3.9 Z" />
+    <path
+        android:fillColor="#D4574E"
+        android:pathData="M41,6.5 L53,6.5 A1,1 0 0 1 54,7.5 L54,7.5 A1,1 0 0 1 53,8.5 L41,8.5 A1,1 0 0 1 40,7.5 L40,7.5 A1,1 0 0 1 41,6.5 Z" />
+    <path
+        android:fillColor="#1C212A"
+        android:pathData="M14,9.1 L80,9.1 A7,7 0 0 1 87,16.1 L87,140.1 A7,7 0 0 1 80,147.1 L14,147.1 A7,7 0 0 1 7,140.1 L7,16.1 A7,7 0 0 1 14,9.1 Z" />
+    <path
+        android:fillColor="#1B2430"
+        android:pathData="M15,11.1 L79,11.1 A5,5 0 0 1 84,16.1 L84,140.2 A5,5 0 0 1 79,145.2 L15,145.2 A5,5 0 0 1 10,140.2 L10,16.1 A5,5 0 0 1 15,11.1 Z" />
+    <path
+        android:fillColor="#26313F"
+        android:pathData="M15,11.1 L79,11.1 A5,5 0 0 1 84,16.1 L84,32.1 A5,5 0 0 1 79,37.1 L15,37.1 A5,5 0 0 1 10,32.1 L10,16.1 A5,5 0 0 1 15,11.1 Z" />
+    <path
+        android:fillColor="#26313F"
+        android:pathData="M10,29.3 L84,29.3 L84,37.1 L10,37.1 Z" />
+    <path
+        android:fillColor="#D4574E"
+        android:pathData="M37.5,151 L62.5,151 A1.5,1.5 0 0 1 64,152.5 L64,152.5 A1.5,1.5 0 0 1 62.5,154 L37.5,154 A1.5,1.5 0 0 1 36,152.5 L36,152.5 A1.5,1.5 0 0 1 37.5,151 Z" />
+    <path
+        android:fillColor="#12161D"
+        android:pathData="M93,26 L94,26 A4,4 0 0 1 98,30 L98,126.2 A4,4 0 0 1 94,130.2 L93,130.2 A4,4 0 0 1 89,126.2 L89,30 A4,4 0 0 1 93,26 Z" />
+    <path
+        android:fillColor="#D4574E"
+        android:pathData="M30,157.5 L70,157.5 A2,2 0 0 1 72,159.5 L72,160.7 A2,2 0 0 1 70,162.7 L30,162.7 A2,2 0 0 1 28,160.7 L28,159.5 A2,2 0 0 1 30,157.5 Z" />
+    <path
+        android:fillColor="#12161D"
+        android:pathData="M31,158.8 L69,158.8 L69,161.4 L31,161.4 Z" />
+</vector>

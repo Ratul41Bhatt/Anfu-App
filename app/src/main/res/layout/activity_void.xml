@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  VOID and EMI VOID, laid out like the PAX terminal: a full screen to enter the
+  original invoice number, then a full screen showing the transaction being
+  cancelled so the merchant can check it before anything is sent.
+
+  Sized for this hardware, not for a phone. The terminal reports a far lower
+  density than a phone does, so a size in dp lands as a handful of actual
+  pixels on an 815 px screen - which is why every screen in this app read as
+  tiny. The numbers here are the ones that are right on the AF930.
+
+  The keypad is the same block as the PIN pad and the EMI amount screen:
+  digits three wide on the left, function keys down the right, CONFIRM in the
+  bottom-right where ENTER sits on the PIN pad. An operator moving between
+  VOID, EMI and PIN entry should not have to learn three arrangements.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- The bank's own lockup, on white where it belongs. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="14dp"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Dutch-Bangla Bank"
+            android:maxWidth="330dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bank_logo" />
+
+        <TextView
+            android:id="@+id/void_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="VOID"
+            android:textColor="#4A6CF7"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/void_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- ============ CHILD 0: ENTER THE ORIGINAL INVOICE NUMBER ============ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp">
+
+            <TextView
+                android:id="@+id/void_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="ORIGINAL INVOICE NO."
+                android:textColor="#101010"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/void_invoice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_emi_amount"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="12dp"
+                android:paddingTop="40dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="40dp"
+                android:text="------"
+                android:textColor="#A9B0C0"
+                android:textSize="68sp"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="68sp"
+                app:autoSizeMinTextSize="26sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:id="@+id/void_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Leave blank and press CONFIRM for the last transaction"
+                android:textColor="#34363B"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/void_k1" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="1" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+
+                        <TextView android:id="@+id/void_k2" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="2" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+
+                        <TextView android:id="@+id/void_k3" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="3" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/void_k4" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="4" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+
+                        <TextView android:id="@+id/void_k5" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="5" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+
+                        <TextView android:id="@+id/void_k6" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="6" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:orientation="horizontal">
+
+                        <TextView android:id="@+id/void_k7" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="7" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+
+                        <TextView android:id="@+id/void_k8" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="8" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+
+                        <TextView android:id="@+id/void_k9" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="9" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:orientation="horizontal">
+
+                        <View android:layout_width="0dp" android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TextView android:id="@+id/void_k0" android:layout_width="0dp"
+                            android:layout_height="match_parent" android:layout_margin="4dp"
+                            android:layout_weight="1" android:background="@drawable/bg_emi_key"
+                            android:clickable="true" android:focusable="true"
+                            android:gravity="center" android:text="0" android:textColor="#16202F"
+                            android:textSize="31sp" android:textStyle="bold" />
+
+                        <View android:layout_width="0dp" android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/void_kclear"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_emi_key_red"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:letterSpacing="0.06"
+                        android:text="Cancel"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:maxLines="1"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/void_kdel"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_emi_key_blue"
+                        android:clickable="true"
+                        android:contentDescription="Backspace"
+                        android:focusable="true"
+                        android:padding="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_emi_backspace" />
+
+                    <TextView
+                        android:id="@+id/void_lookup"
+                        android:layout_width="match_parent"
+                        android:layout_height="144dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_emi_primary"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="CONFIRM"
+                        android:textColor="#FFFFFF"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ============ CHILD 1: CONFIRM THE TRANSACTION BEING VOIDED ============ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:id="@+id/void_detail_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="14dp"
+                    android:paddingBottom="10dp" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/void_warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:paddingBottom="10dp"
+                android:text="This cannot be undone."
+                android:textColor="#B00020"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:id="@+id/void_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="76dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_cancel_red"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="CANCEL"
+                    android:textColor="#FFFFFF"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/void_confirm"
+                    android:layout_width="0dp"
+                    android:layout_height="76dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_confirm_green"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="CONFIRM"
+                    android:textColor="#FFFFFF"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ViewFlipper>
+</LinearLayout>

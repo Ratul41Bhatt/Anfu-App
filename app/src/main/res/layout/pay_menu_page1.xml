@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Menu page 1: LOGON first, then the primary transaction tiles -->
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pax_menu_grid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_12"
+    android:layout_marginRight="@dimen/dp_12"
+    android:columnCount="3"
+    android:useDefaultMargins="false">
+
+    <LinearLayout android:id="@+id/menu_logon" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_logon" />
+        <TextView style="@style/PaxMenuLabel" android:text="LOGON" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_void" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_void" />
+        <TextView style="@style/PaxMenuLabel" android:text="VOID" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_refund" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_refund" />
+        <TextView style="@style/PaxMenuLabel" android:text="REFUND" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_preauth" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_auth" />
+        <TextView style="@style/PaxMenuLabel" android:text="PRE-AUTH" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_preauth_void" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_auth_com" />
+        <TextView style="@style/PaxMenuLabel" android:text="PRE-AUTH VOID" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_salecomp" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_print_preauth" />
+        <TextView style="@style/PaxMenuLabel" android:text="SALE COMPLETE" />
+    </LinearLayout>
+
+</GridLayout>

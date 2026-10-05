@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shown while the terminal is reading the card.
+
+  It carries the same animation the present-card screen was showing, but only
+  the one that is actually happening: once the reader has the card, the other
+  two methods are no longer a choice and showing them is noise. So the tap
+  tile, the swipe tile and the insert tile are all here and exactly one is
+  visible - FindCardActivity picks it from cardType, which the SDK has already
+  set by the time the read starts.
+
+  The art is identical in size and layering to the tiles on the screen behind,
+  so the same animation code drives both and the picture does not jump when
+  the popup appears.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_sheet_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="18dp"
+    android:paddingTop="18dp"
+    android:paddingRight="18dp"
+    android:paddingBottom="18dp">
+
+    <TextView
+        android:id="@+id/rd_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.06"
+        android:text="READING CARD"
+        android:textColor="#2D3242"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/rd_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="3dp"
+        android:text="Hold the card still"
+        android:textColor="#8A91A0"
+        android:textSize="12sp" />
+
+    <!-- All three, exactly one shown. -->
+    <FrameLayout
+        android:layout_width="104dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="10dp">
+
+        <!-- TAP -->
+        <FrameLayout
+            android:id="@+id/rd_tap"
+            android:layout_width="104dp"
+            android:layout_height="180dp"
+            android:clipChildren="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="62dp"
+                android:layout_height="103dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="44dp"
+                android:contentDescription="@null"
+                android:src="@drawable/art_pos" />
+
+            <ImageView
+                android:id="@+id/rd_tap_nfc"
+                android:layout_width="44dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="52dp"
+                android:contentDescription="@null"
+                android:src="@drawable/art_nfc" />
+
+            <ImageView
+                android:id="@+id/rd_tap_card"
+                android:layout_width="50dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@null"
+                android:src="@drawable/art_card" />
+        </FrameLayout>
+
+        <!-- SWIPE -->
+        <FrameLayout
+            android:id="@+id/rd_swipe"
+            android:layout_width="104dp"
+            android:layout_height="180dp"
+            android:clipChildren="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="62dp"
+                android:layout_height="103dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="44dp"
+                android:contentDescription="@null"
+                android:src="@drawable/art_pos" />
+
+            <ImageView
+                android:id="@+id/rd_swipe_card"
+                android:layout_width="26dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left|top"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="26dp"
+                android:contentDescription="@null"
+                android:src="@drawable/art_card" />
+        </FrameLayout>
+
+        <!-- INSERT -->
+        <FrameLayout
+            android:id="@+id/rd_ic"
+            android:layout_width="104dp"
+            android:layout_height="180dp"
+            android:clipChildren="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/rd_ic_card"
+                android:layout_width="50dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="180dp"
+                android:contentDescription="@null"
+                android:src="@drawable/art_card" />
+
+            <ImageView
+                android:layout_width="62dp"
+                android:layout_height="103dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="44dp"
+                android:contentDescription="@null"
+                android:src="@drawable/art_pos" />
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

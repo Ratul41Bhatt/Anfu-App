@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical"
+    android:background="#F3F6FB" android:fitsSystemWindows="true">
+    <ImageView android:layout_width="match_parent" android:layout_height="56dp" android:padding="10dp"
+        android:src="@drawable/bank_logo" android:scaleType="fitCenter" android:background="#FFFFFF" android:contentDescription="Dutch-Bangla Bank" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16dp"
+        android:paddingTop="12dp" android:text="QR Sale Reports" android:textSize="23sp" android:textStyle="bold" android:textColor="#142B4C" />
+    <TextView android:id="@+id/qr_report_summary" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="16dp" android:textSize="15sp" android:textColor="#1859B7" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:paddingHorizontal="12dp">
+        <Button android:id="@+id/qr_report_paid" android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent"
+            android:text="PAID" android:textSize="12sp" android:backgroundTint="#DCEAE5" android:textColor="#126F4E" />
+        <Button android:id="@+id/qr_report_pending" android:layout_width="0dp" android:layout_weight="1.3" android:layout_height="match_parent"
+            android:text="UNCONFIRMED" android:textSize="12sp" android:backgroundTint="#F8ECD9" android:textColor="#92580E" />
+    </LinearLayout>
+    <EditText android:id="@+id/qr_report_search" android:layout_width="match_parent" android:layout_height="48dp"
+        android:layout_marginHorizontal="16dp" android:singleLine="true" android:hint="Search invoice" android:inputType="number" android:textSize="16sp" />
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="12dp">
+        <ListView android:id="@+id/qr_report_list" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:divider="#E1E8F2" android:dividerHeight="6dp" />
+        <TextView android:id="@+id/qr_report_empty" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:gravity="center" android:text="No matching QR payments" android:textColor="#53647C" android:textSize="17sp" />
+    </FrameLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp" android:background="#FFFFFF" android:paddingHorizontal="12dp">
+        <Button android:id="@+id/qr_report_back" style="?android:attr/borderlessButtonStyle" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:text="BACK" android:textColor="#53647C" />
+        <Button android:id="@+id/qr_report_print" android:layout_width="0dp" android:layout_weight="2" android:layout_height="match_parent"
+            android:backgroundTint="#1859B7" android:textColor="#FFFFFF" android:text="PRINT QR REPORT" />
+    </LinearLayout>
+</LinearLayout>

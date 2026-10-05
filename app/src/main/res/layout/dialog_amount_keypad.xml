@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PAX-style amount keypad shown on the main screen (no separate amount page). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5B7BF6"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp">
+
+        <TextView
+            android:id="@+id/kp_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SALE"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/kp_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="TK. 0.00"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="34sp" />
+    </LinearLayout>
+
+    <com.hjq.demo.ui.view.KeyBoardView
+        android:id="@+id/kp_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="320dp" />
+
+</LinearLayout>

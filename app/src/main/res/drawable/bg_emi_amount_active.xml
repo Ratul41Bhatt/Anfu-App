@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The amount panel once a figure has been keyed: the panel itself fills with
+     the app's blue and the number goes white. The colour belongs to the box,
+     not the digits - a whole panel changing is visible from arm's length,
+     which is where the operator usually is. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#4A6CF7" />
+    <corners android:radius="18dp" />
+</shape>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- White, because the key beneath it is now solid blue. Drawn rather than
+     typed: U+232B is missing from the terminal's font and drew as a box. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="26dp" android:height="26dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <path android:pathData="M9,5 h11 a1,1 0 0 1 1,1 v12 a1,1 0 0 1 -1,1 h-11 l-6,-7 z"
+        android:strokeColor="#FFFFFF" android:strokeWidth="2" android:strokeLineJoin="round" />
+    <path android:pathData="M12,9.5 L17,14.5 M17,9.5 L12,14.5"
+        android:strokeColor="#FFFFFF" android:strokeWidth="2" android:strokeLineCap="round" />
+</vector>

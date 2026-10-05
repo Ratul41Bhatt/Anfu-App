@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Menu page 3: the things that are not a transaction.
+
+  Order matters more than it looks. REPORTS and APP INFO are both "show me
+  something" and sit together at the top left, where a thumb lands. MANAGE goes
+  last: it is the one tile a merchant should not reach for by accident - it is
+  password-guarded and it is where the terminal gets reconfigured.
+-->
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pax_menu_grid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_12"
+    android:layout_marginRight="@dimen/dp_12"
+    android:columnCount="3"
+    android:useDefaultMargins="false">
+
+    <LinearLayout android:id="@+id/menu_qr_sale" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/ic_qr_sale" />
+        <TextView style="@style/PaxMenuLabel" android:text="QR SALE" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_reports" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_trans_details" />
+        <TextView style="@style/PaxMenuLabel" android:text="REPORTS" />
+    </LinearLayout>
+
+    <!--
+      Application Information - build, model, OS, serial, SIMs.
+
+      The PAX reference reaches the same facts from its Terminal menu, where the
+      item is called Version and uses app_version. app_info is the icon here
+      because this screen carries the whole block rather than the version
+      alone, and a book with an "i" reads as "information" to a merchant where
+      three stacked numbered windows do not. Both are PAX assets.
+    -->
+    <LinearLayout android:id="@+id/menu_app_info" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_info" />
+        <TextView style="@style/PaxMenuLabel" android:text="APP INFO" />
+    </LinearLayout>
+
+    <!--
+      "Nexus (KonaMoney)" prepaid, paid from the customer's phone. The QR the
+      app shows carries the whole credential, so this tile takes the amount and
+      then opens the scanner - no card is ever presented.
+    -->
+    <LinearLayout android:id="@+id/menu_kona_qr" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/scanner" />
+        <TextView style="@style/PaxMenuLabel" android:text="KONA QR" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/menu_manage" style="@style/PaxMenuTile">
+        <ImageView style="@style/PaxMenuIcon" android:src="@drawable/app_manage" />
+        <TextView style="@style/PaxMenuLabel" android:text="MANAGE" />
+    </LinearLayout>
+
+</GridLayout>

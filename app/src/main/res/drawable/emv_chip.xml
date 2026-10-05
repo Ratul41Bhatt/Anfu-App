@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The contact plate on a payment card. Drawn rather than shipped as a bitmap so
+  it stays sharp at any density, and drawn generically - this is the ISO 7816
+  contact layout, which is a physical standard, not anyone's brand mark.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="46dp"
+    android:height="36dp"
+    android:viewportWidth="46"
+    android:viewportHeight="36">
+
+    <!-- the plate -->
+    <path
+        android:fillColor="#D9B65C"
+        android:pathData="M5,0 L41,0 A5,5 0 0 1 46,5 L46,31 A5,5 0 0 1 41,36 L5,36 A5,5 0 0 1 0,31 L0,5 A5,5 0 0 1 5,0 Z" />
+    <!-- a lighter face, so it reads as metal rather than a flat block -->
+    <path
+        android:fillColor="#EBD08A"
+        android:pathData="M5,1.5 L41,1.5 A3.5,3.5 0 0 1 44.5,5 L44.5,26 L1.5,26 L1.5,5 A3.5,3.5 0 0 1 5,1.5 Z" />
+
+    <!-- contact divisions -->
+    <path android:strokeColor="#A98A38" android:strokeWidth="1.6"
+        android:pathData="M15,0 L15,11 M31,0 L31,11 M15,25 L15,36 M31,25 L31,36" />
+    <path android:strokeColor="#A98A38" android:strokeWidth="1.6"
+        android:pathData="M0,11 L15,11 M31,11 L46,11 M0,25 L15,25 M31,25 L46,25" />
+    <path android:strokeColor="#A98A38" android:strokeWidth="1.6"
+        android:pathData="M15,11 L15,25 M31,11 L31,25 M15,11 L31,11 M15,25 L31,25" />
+    <path android:strokeColor="#A98A38" android:strokeWidth="1.4"
+        android:pathData="M20,18 L26,18" />
+</vector>

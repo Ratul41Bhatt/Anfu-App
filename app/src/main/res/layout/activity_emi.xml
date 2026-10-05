@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  EMI sale, in the order the Move/2500 asks: product, amount, term.
+
+  Three flipper pages rather than two. The product page and the term page look
+  alike but are not the same question, and sharing one page meant the header
+  and the back link belonged to whichever step happened to be showing.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- The bank's own lockup, on white where it belongs - the asset has a
+         white ground and read as a pale block on the blue bar. fitsSystemWindows
+         on the root hands this band the status-bar inset; the extra padding is
+         for the cutout itself, which was clipping the title. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="14dp"
+        android:paddingBottom="12dp">
+
+        <!-- The asset is 3289x621, so a fixed height and wrap_content width
+             let it scale on its own ratio. This terminal reports a far lower
+             density than a phone, so a size in dp lands as a handful of actual
+             pixels on an 815 px screen - which is why everything on this
+             screen read as tiny. The sizes here are the honest ones for this
+             hardware, not the ones a phone mockup would use. -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Dutch-Bangla Bank"
+            android:maxWidth="330dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/bank_logo" />
+
+        <TextView
+            android:id="@+id/emi_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="EMI SALE"
+            android:textColor="#4A6CF7"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#4A6CF7" />
+
+    <ViewFlipper
+        android:id="@+id/emi_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- ==================== CHILD 0: product ==================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Select EMI type"
+                android:textColor="#111111"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Which instalment plan is this purchase on?"
+                android:textColor="#8A90A0"
+                android:textSize="13sp" />
+
+            <!-- Two across. Equal weight so neither reads as the default. -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/emi_type_insta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_emi_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <FrameLayout
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:background="@drawable/bg_emi_icon_blue">
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="0% Insta Pay"
+                            android:src="@drawable/ic_emi_instapay" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="0% INSTA PAY"
+                        android:textColor="#111111"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:minLines="3"
+                        android:text="No interest. The amount is split evenly across the term."
+                        android:textColor="#8A90A0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:id="@+id/emi_type_easy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_emi_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <FrameLayout
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:background="@drawable/bg_emi_icon_amber">
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Easy Buy"
+                            android:src="@drawable/ic_emi_easybuy" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="EASY BUY"
+                        android:textColor="#111111"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:minLines="3"
+                        android:text="The bank applies its rate to the instalments."
+                        android:textColor="#8A90A0"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ==================== CHILD 1: amount ==================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp">
+
+            <LinearLayout
+                android:id="@+id/emi_back_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="‹"
+                    android:textColor="#4A6CF7"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Change type"
+                    android:textColor="#4A6CF7"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- The product, said once and said loudly. As a pale chip tucked
+                 beside the back arrow it was the least visible thing on a
+                 screen whose whole purpose is choosing between two products. -->
+            <TextView
+                android:id="@+id/emi_amount_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_emi_badge"
+                android:paddingLeft="28dp"
+                android:paddingTop="14dp"
+                android:paddingRight="28dp"
+                android:paddingBottom="14dp"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="PURCHASE AMOUNT"
+                android:textColor="#8A90A0"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Twice the box it was. autoSize keeps a long amount inside it
+                 rather than letting 68sp clip "TK 1234567.00" off both ends. -->
+            <TextView
+                android:id="@+id/emi_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_emi_amount"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="12dp"
+                android:paddingTop="40dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="40dp"
+                android:text="TK 0.00"
+                android:textColor="#A9B0C0"
+                android:textSize="68sp"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="68sp"
+                app:autoSizeMinTextSize="26sp"
+                app:autoSizeStepGranularity="2sp"
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:id="@+id/emi_amount_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:textColor="#C0392B"
+                android:textSize="16sp" />
+
+            <!-- Everything above floats to the top, the pad sits on the
+                 bottom edge where the thumb already is. -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="8dp" />
+
+            <!-- The keypad, laid out exactly like the PIN pad: digits in a
+                 three wide block on the left, the function keys stacked down
+                 the right. The two screens follow each other in a sale, so the
+                 operator's thumb should not have to learn two arrangements.
+                 CONTINUE takes the bottom two rows of the right column, where
+                 ENTER sits on the PIN pad. -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/emi_k1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/emi_k2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/emi_k3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/emi_k4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/emi_k5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="5"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/emi_k6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="6"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/emi_k7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="7"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/emi_k8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="8"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/emi_k9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="9"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- 0 in the middle column so the block stays a block. -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/emi_k0"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_emi_key"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#16202F"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/emi_kclear"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_emi_key_red"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:letterSpacing="0.06"
+                        android:text="C"
+                        android:textColor="#FFFFFF"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/emi_kdel"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_emi_key_blue"
+                        android:clickable="true"
+                        android:contentDescription="Backspace"
+                        android:focusable="true"
+                        android:padding="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_emi_backspace" />
+
+                    <TextView
+                        android:id="@+id/emi_continue"
+                        android:layout_width="match_parent"
+                        android:layout_height="144dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_emi_primary"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:text="CONTINUE"
+                        android:textColor="#FFFFFF"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ==================== CHILD 2: term ==================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/emi_back_tenure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingTop="12dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="‹"
+                    android:textColor="#5B7BF6"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="Change amount"
+                    android:textColor="#5B7BF6"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/emi_tenure_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_emi_amount"
+                android:gravity="center"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textColor="#100567"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="CHOOSE A TERM"
+                android:textColor="#8A90A0"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:clipToPadding="false">
+
+                <LinearLayout
+                    android:id="@+id/emi_tenure_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
+                    android:orientation="vertical" />
+            </ScrollView>
+        </LinearLayout>
+    </ViewFlipper>
+
+    <TextView
+        android:id="@+id/emi_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F6F8"
+        android:fontFamily="monospace"
+        android:maxLines="2"
+        android:padding="8dp"
+        android:textColor="#333333"
+        android:textSize="11sp"
+        android:visibility="gone" />
+</LinearLayout>

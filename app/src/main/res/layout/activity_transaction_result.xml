@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_activity"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ui.activity.MyTransactionActivity">
+
+    <com.hjq.bar.TitleBar
+        android:id="@+id/tb_trans_result"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="#00000000"
+        app:leftIcon="@null"
+        app:leftIconHeight="@dimen/dp_18"
+        app:leftIconWidth="@dimen/dp_18"
+        app:lineVisible="false"
+        app:title="@string/trans_processing"
+        app:titleColor="@color/white"
+        app:titleSize="@dimen/sp_16" />
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="@color/common_bg_color"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/dev_r2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_17"
+            android:orientation="vertical">
+
+            <ImageView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:id="@+id/img_wait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_please_wait"/>
+
+
+                <TextView
+                    android:id="@+id/tv_trans_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trans_tip_succ"
+                    android:textColor="@color/common_textcolor_2D"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:background="@color/common_bg_color"
+                    android:id="@+id/tv_printing"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="60S"
+                    android:textColor="@color/common_textcolor_2D"
+                    android:textSize="@dimen/sp_18" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginLeft="@dimen/dp_18"
+                    android:layout_marginRight="@dimen/dp_18"
+                    android:layout_marginBottom="@dimen/dp_8">
+
+                    <TextView
+                        android:id="@+id/tv_slip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:fontFamily="monospace"
+                        android:typeface="monospace"
+                        android:padding="8dp"
+                        android:textColor="#000000"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </ScrollView>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

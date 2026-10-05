@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/qr_root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#F3F6FB" android:fitsSystemWindows="true">
+    <ImageView android:layout_width="match_parent" android:layout_height="58dp" android:padding="10dp"
+        android:background="#FFFFFF" android:src="@drawable/bank_logo" android:scaleType="fitCenter"
+        android:contentDescription="Dutch-Bangla Bank" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="44dp" android:gravity="center_vertical" android:paddingHorizontal="20dp">
+        <ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_qr_sale" android:contentDescription="QR Sale" />
+        <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:layout_marginStart="10dp"
+            android:text="QR Sale" android:textSize="20sp" android:textStyle="bold" android:textColor="#142B4C" />
+        <TextView android:id="@+id/qr_timer" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="#53647C" />
+    </LinearLayout>
+    <TextView android:id="@+id/qr_merchant" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"
+        android:maxLines="1" android:ellipsize="end" android:textSize="13sp" android:textColor="#53647C" />
+    <TextView android:id="@+id/qr_amount" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"
+        android:paddingTop="4dp" android:text="Enter sale amount" android:textSize="24sp" android:textStyle="bold" android:textColor="#142B4C" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:orientation="vertical" android:gravity="center" android:paddingHorizontal="16dp" android:paddingVertical="6dp">
+        <EditText android:id="@+id/qr_amount_input" android:layout_width="match_parent" android:layout_height="68dp"
+            android:padding="12dp" android:background="@drawable/qr_white_card" android:inputType="numberDecimal" android:singleLine="true"
+            android:maxLength="14" android:hint="0.00" android:textSize="32sp" android:textColor="#142B4C" android:gravity="center" android:imeOptions="actionDone" />
+        <ImageView android:id="@+id/qr_code" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="@drawable/qr_white_card" android:scaleType="fitCenter" android:padding="4dp"
+            android:contentDescription="Scan this QR with NexusPay" android:visibility="gone" />
+    </LinearLayout>
+    <TextView android:id="@+id/qr_invoice" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center" android:textSize="12sp" android:textColor="#53647C" />
+    <ProgressBar android:id="@+id/qr_progress" style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent" android:layout_height="3dp" android:indeterminate="true" android:visibility="gone" />
+    <TextView android:id="@+id/qr_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="40dp"
+        android:paddingHorizontal="16dp" android:paddingVertical="8dp" android:gravity="center" android:maxLines="4"
+        android:textSize="14sp" android:textColor="#284366" android:accessibilityLiveRegion="polite"
+        android:text="Enter an amount to create a NexusPay QR." />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
+        android:background="#FFFFFF" android:paddingHorizontal="14dp" android:paddingTop="4dp" android:paddingBottom="6dp">
+        <Button android:id="@+id/qr_confirm" android:layout_width="match_parent" android:layout_height="52dp"
+            android:backgroundTint="#1859B7" android:textColor="#FFFFFF" android:text="GENERATE QR" android:textSize="16sp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="44dp">
+            <Button android:id="@+id/qr_home" style="?android:attr/borderlessButtonStyle" android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="match_parent" android:text="EXIT" android:textColor="#53647C" />
+            <Button android:id="@+id/qr_debug" style="?android:attr/borderlessButtonStyle" android:layout_width="0dp" android:layout_weight="2"
+                android:layout_height="match_parent" android:text="QR REPORTS" android:textColor="#1859B7" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
